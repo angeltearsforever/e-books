@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Blue Moon</title>
+	
+	
+	
+	
+	<link rel="stylesheet" href="https://hbalenda.github.io/angeltears/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js" async=""></script>
+	<script
+	src="https://code.jquery.com/jquery-3.5.0.min.js"
+	integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+	crossorigin="anonymous"></script>
+	<script src="http://www.turnjs.com/lib/turn.min.js"></script>
+	
+</head>
+<body>
+	<header>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1 style="display: none;">Blue Moon</h1>
+			<time style="display: none;">17.04.2020 09:57</time>
+			<div>
+				<div class="controls">
+<div class="button" id="previous"><span>-</span></div>
+<div class="button" id="next"><span>+</span></div>
+</div>
+
+<div id="flipbook">
+
+    <div class="hard cover">
+        <div class="image-wrapper">
+            <img data-src="/images/qzinefrontcover.jpg" class="lazyload"/>
+        </div>
+    </div>
+    <div class="hard qzine-page dedication">
+    </div>
+
+    <div class="qzine-page dedication">
+        <p>March - April 2020</p>
+        <p>In Memory of Bevin and Den</p>
+    </div>
+
+
+    <!-- Mystery Train -->
+    <div class="qzine-page video-caption">
+        <p>Instant coffee (Two Bulk Tins), Italian Roast and Decaf</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408426756?background=1&autoplay=1" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+    <!-- Beetlejuice -->
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/1beetljuicegirlL.jpg" id="1beetljuicegirlL" class="lazyload"/>
+                <p>Top Ten Essentials of the Pandemic:</p>
+                <p>1. Everything Bagels from Maury’s</p>
+            </div>
+        </div>
+    </div>
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/1beetlejuiceboyR.jpg" id="1beetlejuiceboyR" class="lazyload"/>
+                <p>2. VHS copy of Alec Baldwin’s The Shadow from Ebay</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mrs. Doubtfire -->
+    <div class="qzine-page video-caption">
+        <p>Vintage OOmphies Green Furry House Slippers</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408428031?background=1&autoplay=1" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Workign Girl -->
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/2workinggirlboyL.jpg" id="2workinggirlboyL" class="lazyload"/>
+                <p>3. Alec Baldwin’s memoir, Nevertheless, from Ebay</p>
+            </div>
+        </div>
+    </div>
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/2workinggirlgirlR.jpg" id="2workinggirlgirlR" class="lazyload"/>
+                <p>4. Vintage Hunt for Red October and Prelude to a Kiss T-Shirts from Ebay</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flyaway Home -->
+    <div class="qzine-page video-caption">
+        <p>Two Disposable Cameras</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408428410?background=1&autoplay=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Beetlejuice Video -->
+    <div class="qzine-page video-caption">
+        <p>Ring Pops, Bulk Variety Flavors</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408429012?background=1&autoplay=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+    <!-- Miami Blues -->
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/3miamibluesgirlL.jpg" id="3miamibluesgirlL" class="lazyload"/>
+                <p>5. Mango White Claw and Sour Cream and Onion Pringles from the Liquor Store</p>
+            </div>
+        </div>
+    </div>
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/3miamibluesboyR.jpg" id="3miamibluesboyR" class="lazyload"/>
+                <p>6. Oreos from Target</p>
+            </div>
+        </div>
+    </div>
+    {{!-- nicole kidman? --}}
+    <div class="qzine-page video-caption">
+        <p>Bright Blue 40” Anime Cosplay Wig</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408429462?background=1&autoplay=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+    <!-- Hook -->
+    <div class="qzine-page video-caption">
+        <p>Bulk Pack Oil Pastels, Every Color</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408430697?background=1&autoplay=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Prelude -->
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/4preludegirlL.jpg" id="4preludegirlL" class="lazyload"/>
+                <p>7. A jumbo box of Wheat Thins from Costco</p>
+            </div>
+        </div>
+    </div>
+        <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/4preludeboyR.jpg" id="4preludeboyR" class="lazyload"/>
+                <p>8. Jeni’s Ice Cream from Jeni’s</p>
+            </div>
+        </div>
+    </div>
+    <!-- Valley Girl -->
+    <div class="qzine-page video-caption">
+        <p>Biotin Supplement </p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408514222?background=1&autoplay=1" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Bill Durham -->
+    <div class="qzine-page video-caption">
+        <p>Non-Slip Yoga Mat, Marble Rainbow</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+        <iframe class="lazyload" data-src="https://player.vimeo.com/video/408432248?background=1&autoplay=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- The Shadow -->
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/5shadowboyR.jpg" id="5shadowboyR" class="lazyload"/>
+                <p>9. Loopy Mango Merino No. 5 Yarn for knitting beanies</p>
+            </div>
+        </div>
+    </div>
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/5shadowgirlL.jpg" id="5shadowgirlL" class="lazyload"/>
+                <p>10. OFFHOURS NYC Robe from Need Supply Co.</p>
+            </div>
+        </div>
+    </div>`
+    <!-- The Shadow -->
+    <div class="qzine-page video-caption">
+        <p> Bookbinding Needles, Waxed Thread, and Awl</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408435881?background=1&autoplay=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- The Thing -->
+    <div class="qzine-page video-caption">
+        <p><em>The Cloudspotter’s Guide: The Science, History, and Culture of Clouds</em> by Gavin Pretor-Pinney</p>
+    </div>
+    <div class="qzine-page video-embed-wrapper">
+        <div class="video-embed">
+            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408436507?background=1&autoplay=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- The Shadow -->
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/6MiamibluesL.jpg" id="6MiamibluesL" class="lazyload"/>
+                <p>Priceless: The guy playing flute in the park by our house,</p>
+            </div>
+        </div>
+    </div>
+    <div class="qzine-page">
+        <div class="images-with-text">
+            <div>
+                <img data-src="/images/6PreludeR.jpg" id="6PreludeR" class="lazyload"/>
+                <p>walks in the neighborhood, and toilet paper.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="qzine-page " style="background-color: black;" >
+    </div>
+    <div class="qzine-page video-embed-wrapper " style="background-color: black;" >
+        <div class="credits">
+            <iframe class="" src="https://player.vimeo.com/video/408519508?background=1&autoplay=1" width="600"
+                height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="cover">
+        <img data-src="/images/qzinebackcover.jpg" class="lazyload"/>
+    </div>
+</div>
+			</div>
+			
+			
+		</article>
+	</main>
+
+	<footer>
+</footer>
+
+	<script>
+		$("#flipbook").turn({
+			width: 1200,
+			height: 632,
+			page: 8,
+			autoCenter: true,
+		 
+		});
+		$("#previous").click(function() {
+			$("#flipbook").turn("previous");
+		});
+
+		$("#next").click(function() {
+			$("#flipbook").turn("next");
+		});
+		window.addEventListener('DOMContentLoaded', function() {
+			var butterflies = document.querySelectorAll('.butterfly');
+			function getRandomArbitrary(min, max) {
+				return Math.random() * (max - min) + min;
+			}
+			function animateButterfly(butterfly, interval) {
+				setInterval(function() {
+					var numberX = Math.floor(getRandomArbitrary(0, window.innerWidth));
+					var numberY = Math.floor(getRandomArbitrary(0, window.innerHeight));
+					
+					butterfly.style.setProperty('--random-y', numberY +'px');
+					butterfly.style.setProperty('--random-x', numberX +'px');
+				}, interval);
+			}
+
+			animateButterfly(butterflies[0], 9000);
+			animateButterfly(butterflies[1], 13000);
+		})
+	</script>
+</body>
+</html>
