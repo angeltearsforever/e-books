@@ -9,11 +9,40 @@ window.addEventListener('DOMContentLoaded', function() {
         } else {
             var clientHeight = window.innerHeight;
         }
+        if (page == '2' || page == '3') {
+            document.querySelector('.spotify-wrapper').style.opacity = 1;
+        } else {
+            document.querySelector('.spotify-wrapper').style.opacity = 0;
+        }
         $("#flipbook").turn({
             width: clientWidth,
             height: clientHeight,
             page: page,
             autoCenter: true,
+        });
+        bindFlipBookEvents();
+    }
+    const bindFlipBookEvents = function() {
+        $("#flipbook").bind("turned", function(event, page, view) {
+            currentPage = page;
+            console.log(currentPage);
+            setFlipBookDimensions();
+            if (shouldLazyLoadAgain) {
+                console.log('reinit')
+                reinitLazyLoading();   
+                shouldLazyLoadAgain = false;
+            }
+        });
+    
+        $("#flipbook").bind("turning", function(event, page, view) {
+            if (page < currentPage) {
+                shouldLazyLoadAgain = true;
+            }
+            if (page == '2' || page == '3') {
+                document.querySelector('.spotify-wrapper').style.opacity = 1;
+            } else {
+                document.querySelector('.spotify-wrapper').style.opacity = 0;
+            }
         });
     }
     const setFlipBookDimensions = function() {
@@ -54,35 +83,20 @@ window.addEventListener('DOMContentLoaded', function() {
         lazySizes.init();
     }
     //Initialize FlipBook
-    var currentPage = 10;
+    var currentPage = 1;
+    var shouldLazyLoadAgain = false;
     initFlipBook(currentPage);
-    $("#flipbook").bind("turned", function(event, page, view) {
-        setFlipBookDimensions();
-        if (page < currentPage) {
-            reinitLazyLoading();
-        }
-        currentPage = page;
-    });
-
-    $("#flipbook").bind("turning", function(event, page, view) {
-        if (page == '2' || page == '3') {
-            document.querySelector('.spotify-wrapper').style.opacity = 1;
-        } else {
-            document.querySelector('.spotify-wrapper').style.opacity = 0;
-        }
-    });
     //Set Flipbook Dimensions
     setFlipBookDimensions();
     //Bind Click Events
     $("#previous").click(function() {
         $("#flipbook").turn("previous");
-        currentPage--;
-        reinitLazyLoading();
+        currentPage = currentPage-2;
     });
     
     $("#next").click(function() {
         $("#flipbook").turn("next");
-        currentPage++;
+        currentPage = currentPage+2;
     });
 
     //Bind Resize Events
