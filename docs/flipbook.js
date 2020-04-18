@@ -1,12 +1,11 @@
 window.addEventListener('DOMContentLoaded', function() {
     const flipBook = document.querySelector('.flipbook-wrapper').innerHTML;
     const initFlipBook = function(page) {
-        console.log('initFlipBook');
-        var spotifyWidth = '80px';
-        (spotifyWidth) ? document.querySelector('.dedication iframe').style.width = spotifyWidth : null;
         const clientWidth = window.innerWidth;
         if (clientWidth < 500) {
             var clientHeight = window.innerHeight / 2;
+            var spotifyWidth = '80px' 
+            (spotifyWidth) ? document.querySelector('.dedication iframe').style.width = spotifyWidth : null;
         } else {
             var clientHeight = window.innerHeight;
         }
@@ -18,7 +17,6 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
     const setFlipBookDimensions = function() {
-        console.log('setFlipBookDimensions')
         const clientWidth = window.innerWidth;
         if (clientWidth < 500) {
             var clientHeight = window.innerHeight / 2;
@@ -45,6 +43,8 @@ window.addEventListener('DOMContentLoaded', function() {
             embed.style.width = (singlePageWidth) + 'px';
         })
         document.querySelector('.controls').style.right = controlsOffset;
+        document.querySelector('.spotify-wrapper').style.left = (clientWidth / 4) + 'px';
+        document.querySelector('.spotify-wrapper').style.top = (clientHeight / 2) + 'px';
     }
     const reinitLazyLoading = function() {
         document.querySelectorAll('.lazyloaded').forEach(function(loaded) {
@@ -54,10 +54,9 @@ window.addEventListener('DOMContentLoaded', function() {
         lazySizes.init();
     }
     //Initialize FlipBook
-    var currentPage = 1;
+    var currentPage = 10;
     initFlipBook(currentPage);
     $("#flipbook").bind("turned", function(event, page, view) {
-        console.log('turned')
         setFlipBookDimensions();
         if (page < currentPage) {
             reinitLazyLoading();
@@ -65,25 +64,29 @@ window.addEventListener('DOMContentLoaded', function() {
         currentPage = page;
     });
 
+    $("#flipbook").bind("turning", function(event, page, view) {
+        if (page == '2' || page == '3') {
+            document.querySelector('.spotify-wrapper').style.opacity = 1;
+        } else {
+            document.querySelector('.spotify-wrapper').style.opacity = 0;
+        }
+    });
     //Set Flipbook Dimensions
     setFlipBookDimensions();
     //Bind Click Events
     $("#previous").click(function() {
-        console.log('previous')
         $("#flipbook").turn("previous");
         currentPage--;
         reinitLazyLoading();
     });
     
     $("#next").click(function() {
-        console.log('next')
         $("#flipbook").turn("next");
         currentPage++;
     });
 
     //Bind Resize Events
     window.addEventListener('resize', function() {
-        console.log('onresize')
         $("#flipbook").turn("destroy");
         document.querySelector('.flipbook-wrapper').innerHTML = flipBook;
         initFlipBook(currentPage);

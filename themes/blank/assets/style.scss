@@ -55,8 +55,16 @@ html, body {
     padding-bottom: 4px;
   }
 }
+.spotify-wrapper {
+  opacity: 0;
+  position: absolute;
+  transition: opacity .5s;
+  z-index:2;
+  transform: translate(-50%, -50%);
+}
 .flipbook-wrapper {
   z-index: 1;
+  cursor: url('../angeltears/images/french-horn-angel.svg'), auto!important;
   @media screen and (max-width: $tablet) {
     transform: translateY(50%);
   }
@@ -83,6 +91,12 @@ html, body {
 }
 .back-cover {
   background-image: url('../angeltears/images/qzinebackcover.jpg')
+}
+.qzine-page.credits-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
 }
 .credits {
   display: flex;
@@ -136,6 +150,7 @@ html, body {
     iframe {
       overflow: hidden;
       position: absolute;
+      height: 100%;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
