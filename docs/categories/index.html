@@ -15,7 +15,7 @@
 	src="https://code.jquery.com/jquery-3.5.0.min.js"
 	integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
 	crossorigin="anonymous"></script>
-	<script src="http://www.turnjs.com/lib/turn.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
 	<link rel="alternate" type="application/rss+xml" href="https://hbalenda.github.io/angeltears/categories/index.xml" title="Angel Tears">
 </head>
 <body>
@@ -60,20 +60,20 @@
 </footer>
 
 	<script>
-		$("#flipbook").turn({
-			width: 1200,
-			height: 632,
-			autoCenter: true,
-		 
-		});
-		$("#previous").click(function() {
-			$("#flipbook").turn("previous");
-		});
-
-		$("#next").click(function() {
-			$("#flipbook").turn("next");
-		});
 		window.addEventListener('DOMContentLoaded', function() {
+			$("#flipbook").turn({
+				width: 1200,
+				height: 632,
+				autoCenter: true,
+			 
+			});
+			$("#previous").click(function() {
+				$("#flipbook").turn("previous");
+			});
+
+			$("#next").click(function() {
+				$("#flipbook").turn("next");
+			});
 			var butterflies = document.querySelectorAll('.butterfly');
 			function getRandomArbitrary(min, max) {
 				return Math.random() * (max - min) + min;
