@@ -18,8 +18,12 @@ $desktop-content-padding: 13vw;
   top: var(--mouse-y);
   z-index: 77;
   pointer-events: none;
+}
+
+:root {
   @media screen and (max-width: $desktop) {
-    display: none;
+    --mouse-x: 65%;
+    --mouse-y: 20%;
   }
 }
 
@@ -84,9 +88,6 @@ html, body {
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  @media screen and (max-width: $tablet) {
-    transform: translateY(33%);
-  }
 }
 #flipbook{
   z-index: 1;
@@ -187,7 +188,7 @@ html, body {
       text-align: left;
       padding-left: 15px;
       @media screen and (max-width: $tablet) {
-        padding-left: 10px;
+        padding-left: 7px;
       }
     }
     & > * {
@@ -200,8 +201,7 @@ html, body {
       height: 70vh;
       padding-bottom: 15px;
       @media screen and (max-width: $tablet) {
-        height: 25vh;
-        padding-bottom: 10px;
+        padding-bottom: 7px;
       }
     }
   }

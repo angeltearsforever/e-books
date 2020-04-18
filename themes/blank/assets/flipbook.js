@@ -1,18 +1,11 @@
 window.addEventListener('DOMContentLoaded', function() {
     const flipBook = document.querySelector('.flipbook-wrapper').innerHTML;
     const initFlipBook = function(page) {
-        const clientWidth = window.innerWidth;
-        if (clientWidth < 500) {
-            var clientHeight = window.innerHeight / 2;
-            var spotifyWidth = '80px';
-            (spotifyWidth) ? document.querySelector('.spotify-wrapper iframe').style.width = spotifyWidth : null;
-        } else {
-            var clientHeight = window.innerHeight;
-        }
+        setGlobalDimensions();
 
         $("#flipbook").turn({
-            width: clientWidth,
-            height: clientHeight,
+            width: window.qzine.clientWidth,
+            height: window.qzine.flipBookHeight,
             page: page,
             autoCenter: true,
         });
@@ -42,70 +35,46 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
     const bindMouseEvents = function () {
-        if (clientWidth > 1000) {
-            const body = document.querySelector('body');
-            let root = document.documentElement;
-    
-            root.addEventListener("mousemove", e => {
-            root.style.setProperty('--mouse-x', e.clientX + "px");
-            root.style.setProperty('--mouse-y', e.clientY + "px");
-            if (e.pageX < singlePageWidth) {
-                    body.classList.remove('right');
-                    body.classList.add('left');
-                } else {
-                    body.classList.remove('left');
-                    body.classList.add('right');
-                }
-            });
-        }
-    }
-    //global width variables
-    var clientWidth = window.innerWidth;
-    var clientHeight;
-    var controlsOffset;
-        if (clientWidth < 500) {
-            clientHeight = window.innerHeight / 2;
-            controlsOffset = 0;
-        } else if (clientWidth < 1000) {
-            controlsOffset = 0;
-            clientHeight = window.innerHeight;
-        } else {
-            clientHeight = window.innerHeight;
-            controlsOffset = '50px';
-        }       
-    var singlePageWidth = clientWidth / 2;
+        const body = document.querySelector('body');
+        let root = document.documentElement;
 
+        root.addEventListener("mousemove", e => {
+        root.style.setProperty('--mouse-x', e.clientX + "px");
+        root.style.setProperty('--mouse-y', e.clientY + "px");
+            if (e.pageX < window.qzine.singlePageWidth) {
+                body.classList.remove('right');
+                body.classList.add('left');
+            } else {
+                body.classList.remove('left');
+                body.classList.add('right');
+            }
+        });
+    }
     const setFlipBookDimensions = function(page) {
         //Update global width variables
-        clientWidth = window.innerWidth;
-        if (clientWidth < 500) {
-            clientHeight = window.innerHeight / 3;
-            controlsOffset = 0;
-        } else if (clientWidth < 1000) {
-            controlsOffset = 0;
-            clientHeight = window.innerHeight;
-        } else {
-            clientHeight = window.innerHeight;
-            controlsOffset = '50px';
-        }    
-        singlePageWidth = clientWidth / 2;
+        setGlobalDimensions();
 
-        document.querySelector('#flipbook').style.height = clientHeight + 'px';
-        document.querySelector('#flipbook').style.width = clientWidth + 'px';
+        document.querySelector('#flipbook').style.height = window.qzine.flipBookHeight + 'px';
+        document.querySelector('#flipbook').style.width = window.qzine.clientWidth + 'px';
+        let translateY = (window.innerHeight - window.qzine.flipBookHeight) / 2;
+        document.querySelector('.flipbook-wrapper').style.transform ='translateY('+ translateY + 'px' + ')';
         document.querySelectorAll('#flipbook .page').forEach(function(page) {
-            page.style.height = clientHeight + 'px';
-            page.style.width = clientWidth;
+            page.style.height = window.qzine.flipBookHeight + 'px';
+            page.style.width = window.qzine.clientWidth;
         })
         document.querySelectorAll('.qzine-page').forEach(function(page) {
-            page.style.height = clientHeight + 'px';
-            page.style.width = singlePageWidth + 'px';
+            page.style.height = window.qzine.flipBookHeight + 'px';
+            page.style.width = window.qzine.singlePageWidth + 'px';
         })
         document.querySelectorAll('.video-embed iframe').forEach(function(embed) {
-            embed.style.width = (singlePageWidth) + 'px';
+            embed.style.width = (window.qzine.singlePageWidth) + 'px';
         })
-        document.querySelector('.controls').style.right = controlsOffset;
-        document.querySelector('.spotify-wrapper').style.left = (clientWidth / 4) + 'px';
-        document.querySelector('.spotify-wrapper').style.top = (clientHeight / 2) + 'px';
+        document.querySelectorAll('.images-with-text img').forEach(function(img) {
+            img.style.height = (window.qzine.flipBookHeight * .7) + 'px';
+        })
+        document.querySelector('.controls').style.right = window.qzine.controlsOffset;
+        document.querySelector('.spotify-wrapper').style.left = (window.qzine.clientWidth / 4) + 'px';
+        document.querySelector('.spotify-wrapper').style.top = (window.qzine.flipBookHeight / 2) + 'px';
         if (page == '2' || page == '3') {
             document.querySelector('.spotify-wrapper').style.opacity = 1;
             document.querySelector('.spotify-wrapper').style.zIndex = 2;
@@ -120,6 +89,23 @@ window.addEventListener('DOMContentLoaded', function() {
             loaded.classList.add('lazyload');
         })
         lazySizes.init();
+    }
+    const setGlobalDimensions = function() {
+        window.qzine = {};
+        window.qzine.clientWidth = window.innerWidth;
+            if (window.qzine.clientWidth < 500) {
+                window.qzine.controlsOffset = 0;
+                window.qzine.flipBookHeight = window.qzine.clientWidth * .54;
+                var spotifyWidth = '80px';
+                document.querySelector('.spotify-wrapper iframe').style.width = spotifyWidth;
+            } else if (window.qzine.clientWidth < 1000) {
+                window.qzine.controlsOffset = 0;
+                window.qzine.flipBookHeight = window.qzine.clientWidth * .54;
+            } else {
+                window.qzine.controlsOffset = '50px';
+                window.qzine.flipBookHeight = window.innerHeight;
+            }
+        window.qzine.singlePageWidth = window.qzine.clientWidth / 2;
     }
 
     ////////////////////////
