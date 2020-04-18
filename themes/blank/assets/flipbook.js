@@ -24,7 +24,6 @@ window.addEventListener('DOMContentLoaded', function() {
     $("#flipbook").turn({
         width: clientWidth,
         height: clientHeight,
-        page: 8,
         autoCenter: true,
     });
     //Set Flipbook Dimensions
