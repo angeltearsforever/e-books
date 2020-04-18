@@ -3,3 +3,4 @@ languageCode = "en-us"
 title = "Angel Tears"
 theme = "blank"
 publishDir = "docs"
+canonifyURLs=true
