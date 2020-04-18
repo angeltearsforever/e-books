@@ -82,7 +82,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   @media screen and (max-width: $tablet) {
-    transform: translateY(50%);
+    transform: translateY(33%);
   }
 }
 #flipbook{
@@ -138,7 +138,7 @@ html, body {
       margin: 0;
       color: black;
       @media screen and (max-width: $tablet) {
-        font-size: 9px;
+        font-size: 8px;
       }
     }
   }
@@ -181,8 +181,11 @@ html, body {
       display: flex;
       justify-content: stretch;
       align-items: stretch;
-      text-align: center;
+      text-align: left;
       padding-left: 15px;
+      @media screen and (max-width: $tablet) {
+        padding-left: 10px;
+      }
     }
     & > * {
       display: flex;
@@ -191,8 +194,12 @@ html, body {
     img {
       width: 100%;
       object-fit: cover;
-      padding-bottom: 15px;
       height: 70vh;
+      padding-bottom: 15px;
+      @media screen and (max-width: $tablet) {
+        height: 25vh;
+        padding-bottom: 10px;
+      }
     }
   }
   

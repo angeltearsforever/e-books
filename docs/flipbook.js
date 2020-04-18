@@ -5,15 +5,11 @@ window.addEventListener('DOMContentLoaded', function() {
         if (clientWidth < 500) {
             var clientHeight = window.innerHeight / 2;
             var spotifyWidth = '80px';
-            (spotifyWidth) ? document.querySelector('.dedication iframe').style.width = spotifyWidth : null;
+            (spotifyWidth) ? document.querySelector('.spotify-wrapper iframe').style.width = spotifyWidth : null;
         } else {
             var clientHeight = window.innerHeight;
         }
-        if (page == '2' || page == '3') {
-            document.querySelector('.spotify-wrapper').style.opacity = 1;
-        } else {
-            document.querySelector('.spotify-wrapper').style.opacity = 0;
-        }
+
         $("#flipbook").turn({
             width: clientWidth,
             height: clientHeight,
@@ -22,12 +18,12 @@ window.addEventListener('DOMContentLoaded', function() {
         });
         bindFlipBookEvents();
         //Set Flipbook Dimensions
-        setFlipBookDimensions();
+        setFlipBookDimensions(page);
     }
     const bindFlipBookEvents = function() {
         $("#flipbook").bind("turned", function(event, page, view) {
             currentPage = page;
-            setFlipBookDimensions();
+            setFlipBookDimensions(currentPage);
             if (shouldLazyLoadAgain) {
                 reinitLazyLoading();   
                 shouldLazyLoadAgain = false;
@@ -47,29 +43,33 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     //global width variables
     var clientWidth = window.innerWidth;
-        if (clientWidth < 500) {
-            var clientHeight = window.innerHeight / 2;
-            var controlsOffset = 0;
-        } else if (clientWidth < 1000) {
-            var controlsOffset = 0;
-        } else {
-            var clientHeight = window.innerHeight;
-            var controlsOffset = '50px';
-        }       
-    var singlePageWidth = clientWidth / 2;
-
-    const setFlipBookDimensions = function() {
-        //Update global width variables
-        clientWidth = window.innerWidth;
+    var clientHeight;
+    var controlsOffset;
         if (clientWidth < 500) {
             clientHeight = window.innerHeight / 2;
             controlsOffset = 0;
         } else if (clientWidth < 1000) {
             controlsOffset = 0;
+            clientHeight = window.innerHeight;
         } else {
             clientHeight = window.innerHeight;
             controlsOffset = '50px';
         }       
+    var singlePageWidth = clientWidth / 2;
+
+    const setFlipBookDimensions = function(page) {
+        //Update global width variables
+        clientWidth = window.innerWidth;
+        if (clientWidth < 500) {
+            clientHeight = window.innerHeight / 3;
+            controlsOffset = 0;
+        } else if (clientWidth < 1000) {
+            controlsOffset = 0;
+            clientHeight = window.innerHeight;
+        } else {
+            clientHeight = window.innerHeight;
+            controlsOffset = '50px';
+        }    
         singlePageWidth = clientWidth / 2;
 
         document.querySelector('#flipbook').style.height = clientHeight + 'px';
@@ -88,6 +88,13 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.controls').style.right = controlsOffset;
         document.querySelector('.spotify-wrapper').style.left = (clientWidth / 4) + 'px';
         document.querySelector('.spotify-wrapper').style.top = (clientHeight / 2) + 'px';
+        if (page == '2' || page == '3') {
+            document.querySelector('.spotify-wrapper').style.opacity = 1;
+            document.querySelector('.spotify-wrapper').style.zIndex = 2;
+        } else {
+            document.querySelector('.spotify-wrapper').style.opacity = 0;
+            document.querySelector('.spotify-wrapper').style.zIndex = -1;
+        }
     }
     const reinitLazyLoading = function() {
         document.querySelectorAll('.lazyloaded').forEach(function(loaded) {
