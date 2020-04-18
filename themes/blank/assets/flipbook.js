@@ -21,6 +21,8 @@ window.addEventListener('DOMContentLoaded', function() {
             autoCenter: true,
         });
         bindFlipBookEvents();
+        //Set Flipbook Dimensions
+        setFlipBookDimensions();
     }
     const bindFlipBookEvents = function() {
         $("#flipbook").bind("turned", function(event, page, view) {
@@ -43,8 +45,8 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    const setFlipBookDimensions = function() {
-        const clientWidth = window.innerWidth;
+    //global width variables
+    var clientWidth = window.innerWidth;
         if (clientWidth < 500) {
             var clientHeight = window.innerHeight / 2;
             var controlsOffset = 0;
@@ -54,7 +56,21 @@ window.addEventListener('DOMContentLoaded', function() {
             var clientHeight = window.innerHeight;
             var controlsOffset = '50px';
         }       
-        const singlePageWidth = clientWidth / 2;
+    var singlePageWidth = clientWidth / 2;
+
+    const setFlipBookDimensions = function() {
+        //Update global width variables
+        clientWidth = window.innerWidth;
+        if (clientWidth < 500) {
+            clientHeight = window.innerHeight / 2;
+            controlsOffset = 0;
+        } else if (clientWidth < 1000) {
+            controlsOffset = 0;
+        } else {
+            clientHeight = window.innerHeight;
+            controlsOffset = '50px';
+        }       
+        singlePageWidth = clientWidth / 2;
 
         document.querySelector('#flipbook').style.height = clientHeight + 'px';
         document.querySelector('#flipbook').style.width = clientWidth + 'px';
@@ -80,12 +96,15 @@ window.addEventListener('DOMContentLoaded', function() {
         })
         lazySizes.init();
     }
+
+    ////////////////////////
+    // DO STUFF
+    ////////////////////////
     //Initialize FlipBook
     var currentPage = 1;
     var shouldLazyLoadAgain = false;
     initFlipBook(currentPage);
-    //Set Flipbook Dimensions
-    setFlipBookDimensions();
+
     //Bind Click Events
     $("#previous").click(function() {
         $("#flipbook").turn("previous");
@@ -97,11 +116,26 @@ window.addEventListener('DOMContentLoaded', function() {
         currentPage = currentPage+2;
     });
 
+    //Bind Mouse Events
+    const body = document.querySelector('body');
+    let root = document.documentElement;
+
+    root.addEventListener("mousemove", e => {
+      root.style.setProperty('--mouse-x', e.clientX + "px");
+      root.style.setProperty('--mouse-y', e.clientY + "px");
+      if (e.pageX < singlePageWidth) {
+            body.classList.remove('right');
+            body.classList.add('left');
+        } else {
+            body.classList.remove('left');
+            body.classList.add('right');
+        }
+    });
     //Bind Resize Events
     window.addEventListener('resize', _.debounce(function() {
+        //Destroy and restart flipbook
         $("#flipbook").turn("destroy");
         document.querySelector('.flipbook-wrapper').innerHTML = flipBook;
         initFlipBook(currentPage);
-        setFlipBookDimensions();
     }, 200));
 })

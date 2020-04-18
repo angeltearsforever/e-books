@@ -7,8 +7,21 @@ $slimegreen: #64e673;
 $content-padding: 5vw;
 $desktop-content-padding: 13vw;
 
-* {
-  cursor: url('../angeltears/images/french-horn-angel.svg'), auto!important;
+.left .angel {
+  transform: scaleX(-1);
+}
+.angel {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  z-index: 77;
+  pointer-events: none
+}
+
+html {
+  cursor: none;
 }
 html, body {
   background-color: #111;
@@ -30,6 +43,7 @@ html, body {
   position: absolute;
   top: 0;
   z-index:3;
+  display: none;
 }
 .button {
   margin: 5px;
@@ -64,7 +78,8 @@ html, body {
 }
 .flipbook-wrapper {
   z-index: 1;
-  cursor: url('../angeltears/images/french-horn-angel.svg'), auto!important;
+  width: 100vw;
+  height: 100vh;
   @media screen and (max-width: $tablet) {
     transform: translateY(50%);
   }
