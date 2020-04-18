@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#flipbook').style.height = window.qzine.flipBookHeight + 'px';
         document.querySelector('#flipbook').style.width = window.qzine.clientWidth + 'px';
         let translateY = (window.innerHeight - window.qzine.flipBookHeight) / 2;
-        document.querySelector('.flipbook-wrapper').style.transform ='translateY('+ translateY + 'px' + ')';
+        document.querySelector('.angel-tears').style.transform ='translateY('+ translateY + 'px' + ')';
         document.querySelectorAll('#flipbook .page').forEach(function(page) {
             page.style.height = window.qzine.flipBookHeight + 'px';
             page.style.width = window.qzine.clientWidth;
