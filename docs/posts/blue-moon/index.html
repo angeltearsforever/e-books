@@ -15,7 +15,8 @@
 	src="https://code.jquery.com/jquery-3.5.0.min.js"
 	integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
 	crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+	
+	<script src="https://hbalenda.github.io/angeltears/turn.js"></script>
 	
 </head>
 <body>
@@ -309,9 +310,10 @@
 					butterfly.style.setProperty('--random-x', numberX +'px');
 				}, interval);
 			}
-
-			animateButterfly(butterflies[0], 9000);
-			animateButterfly(butterflies[1], 13000);
+			if (butterflies) {
+				animateButterfly(butterflies[0], 9000);
+				animateButterfly(butterflies[1], 13000);
+			}
 		})
 	</script>
 </body>
