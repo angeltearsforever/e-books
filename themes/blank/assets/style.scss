@@ -1,29 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 $tablet: 500px;
+$desktop: 1000px;
 $white: #fff;
 $slimegreen: #64e673;
 $content-padding: 5vw;
 $desktop-content-padding: 13vw;
 
+* {
+  cursor: url('../angeltears/images/french-horn-angel.svg'), auto!important;
+}
 html, body {
   background-color: #111;
   height: 100vh;
   width: 100vw;
   margin: 0;
 }
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
 .controls {
   display: flex;
   justify-content: flex-end;
   position: absolute;
   top: 0;
-  right: 50px;
-  z-index:2;
+  z-index:3;
 }
 .button {
-  cursor: pointer;
   margin: 5px;
-  border: 5px solid black;
+  border: 3px solid black;
   width: 30px;
   height: 30px;
   padding: 0;
@@ -45,8 +55,14 @@ html, body {
     padding-bottom: 4px;
   }
 }
-
+.flipbook-wrapper {
+  z-index: 1;
+  @media screen and (max-width: $tablet) {
+    transform: translateY(50%);
+  }
+}
 #flipbook{
+  z-index: 1;
   clear: both;
   overflow: hidden;
 }
@@ -54,21 +70,26 @@ html, body {
   width: 100%;
   height:100%;
 }
+
+//Covers
 .cover {
   width: 100%;
-  img {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    overflow: hidden;
-  }
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.front-cover {
+  background-image: url('../angeltears/images/qzinefrontcover.jpg');
+  background-position: center;
+}
+.back-cover {
+  background-image: url('../angeltears/images/qzinebackcover.jpg')
 }
 .credits {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  margin: 40px 0;
 }
 .qzine-page {
   background-color: $slimegreen;
@@ -110,15 +131,107 @@ html, body {
   .video-embed {
     background-color: black;
     overflow:hidden;
+    height: 100%;
     iframe {
       overflow: hidden;
       object-position: center;
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(-22%, -3%);
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-22%, -3%);
+      }
     }
     .mystery-train {
-      transform: translate(5%, -12%);
+      transform: translate(-30%, -3%);//done
+      @media screen and (min-width: 500px) {
+        transform: translate(5%, -32%);//done
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-29%, -6%);//done
+      }
     }
     .mrs-doubtfire {
-      transform: translate(10%, -12%);
+      transform: translate(10%, -32%);
+      @media screen and (min-width: 500px) {
+        transform: translate(10%, -32%);//done
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-27%, -6%); //done
+      }
+    }
+    .flyaway-home {
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(5%, -12%);//done
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-28%, -6%); //done
+      }
+    }
+    .hook {
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(5%, -15%);//done
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-28%, -7%); //done
+      }
+    }
+    .cosplay-wig {
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(5%, -10%);//done
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-30%, -6%); //done
+      }
+    }
+    .ring-pops {
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(6%, -10%);//done
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-30%, -6%); //done
+      }
+    }
+    .biotin {
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(5%, -10%);//done
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-30%, -6%); //done
+      }
+    }
+    .durham {
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(2%, -14%);//done
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-30%, -6%); //done
+      }
+    }
+    .shadow {
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(-22%, -3%);
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-30%, -2%); //done
+      }
+    }
+    .thing {
+      transform: translate(-22%, -3%);
+      @media screen and (min-width: 500px) {
+        transform: translate(-22%, -3%);
+      }
+      @media screen and (min-width: 1000px) {
+        transform: translate(-27%, -8%); //done
+      }
     }
   }
   .images-with-text {
@@ -141,7 +254,7 @@ html, body {
       width: 100%;
       object-fit: cover;
       padding-bottom: 15px;
-      min-height: 70vh;
+      height: 70vh;
     }
   }
   
@@ -315,3 +428,4 @@ html, body {
       transform: translate(random(200), random(200));
     }
   }
+
