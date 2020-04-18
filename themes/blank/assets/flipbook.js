@@ -25,7 +25,6 @@ window.addEventListener('DOMContentLoaded', function() {
             var controlsOffset = 0;
         } else if (clientWidth < 1000) {
             var controlsOffset = 0;
-            var videoWidth = 300;
         } else {
             var clientHeight = window.innerHeight;
             var controlsOffset = '50px';
@@ -43,8 +42,7 @@ window.addEventListener('DOMContentLoaded', function() {
             page.style.width = singlePageWidth + 'px';
         })
         document.querySelectorAll('.video-embed iframe').forEach(function(embed) {
-            embed.style.height = (clientHeight * 1.2) + 'px';
-            embed.style.width = videoWidth + 'px';
+            embed.style.width = (singlePageWidth) + 'px';
         })
         document.querySelector('.controls').style.right = controlsOffset;
     }

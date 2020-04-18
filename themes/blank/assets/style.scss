@@ -132,106 +132,13 @@ html, body {
     background-color: black;
     overflow:hidden;
     height: 100%;
+    position: relative;
     iframe {
       overflow: hidden;
-      object-position: center;
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(-22%, -3%);
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-22%, -3%);
-      }
-    }
-    .mystery-train {
-      transform: translate(-30%, -3%);//done
-      @media screen and (min-width: 500px) {
-        transform: translate(5%, -32%);//done
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-29%, -6%);//done
-      }
-    }
-    .mrs-doubtfire {
-      transform: translate(10%, -32%);
-      @media screen and (min-width: 500px) {
-        transform: translate(10%, -32%);//done
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-27%, -6%); //done
-      }
-    }
-    .flyaway-home {
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(5%, -12%);//done
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-28%, -6%); //done
-      }
-    }
-    .hook {
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(5%, -15%);//done
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-28%, -7%); //done
-      }
-    }
-    .cosplay-wig {
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(5%, -10%);//done
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-30%, -6%); //done
-      }
-    }
-    .ring-pops {
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(6%, -10%);//done
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-30%, -6%); //done
-      }
-    }
-    .biotin {
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(5%, -10%);//done
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-30%, -6%); //done
-      }
-    }
-    .durham {
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(2%, -14%);//done
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-30%, -6%); //done
-      }
-    }
-    .shadow {
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(-22%, -3%);
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-30%, -2%); //done
-      }
-    }
-    .thing {
-      transform: translate(-22%, -3%);
-      @media screen and (min-width: 500px) {
-        transform: translate(-22%, -3%);
-      }
-      @media screen and (min-width: 1000px) {
-        transform: translate(-27%, -8%); //done
-      }
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
   .images-with-text {
