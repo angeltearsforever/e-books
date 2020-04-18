@@ -41,6 +41,24 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    const bindMouseEvents = function () {
+        if (clientWidth > 1000) {
+            const body = document.querySelector('body');
+            let root = document.documentElement;
+    
+            root.addEventListener("mousemove", e => {
+            root.style.setProperty('--mouse-x', e.clientX + "px");
+            root.style.setProperty('--mouse-y', e.clientY + "px");
+            if (e.pageX < singlePageWidth) {
+                    body.classList.remove('right');
+                    body.classList.add('left');
+                } else {
+                    body.classList.remove('left');
+                    body.classList.add('right');
+                }
+            });
+        }
+    }
     //global width variables
     var clientWidth = window.innerWidth;
     var clientHeight;
@@ -124,20 +142,8 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
     //Bind Mouse Events
-    const body = document.querySelector('body');
-    let root = document.documentElement;
-
-    root.addEventListener("mousemove", e => {
-      root.style.setProperty('--mouse-x', e.clientX + "px");
-      root.style.setProperty('--mouse-y', e.clientY + "px");
-      if (e.pageX < singlePageWidth) {
-            body.classList.remove('right');
-            body.classList.add('left');
-        } else {
-            body.classList.remove('left');
-            body.classList.add('right');
-        }
-    });
+    bindMouseEvents();
+    
     //Bind Resize Events
     window.addEventListener('resize', _.debounce(function() {
         //Destroy and restart flipbook

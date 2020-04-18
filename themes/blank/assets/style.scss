@@ -17,7 +17,10 @@ $desktop-content-padding: 13vw;
   left: var(--mouse-x);
   top: var(--mouse-y);
   z-index: 77;
-  pointer-events: none
+  pointer-events: none;
+  @media screen and (max-width: $desktop) {
+    display: none;
+  }
 }
 
 html {
