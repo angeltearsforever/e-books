@@ -29,7 +29,7 @@
 		window.addEventListener('DOMContentLoaded', function() {
 			$("#flipbook").turn({
 				width: 1200,
-				height: 632,
+				height: 465,
 				autoCenter: true,
 			/*     display: 'single' */
 			});
@@ -53,7 +53,7 @@
 					butterfly.style.setProperty('--random-x', numberX +'px');
 				}, interval);
 			}
-			if (butterflies) {
+			if (butterflies.length) {
 				animateButterfly(butterflies[0], 9000);
 				animateButterfly(butterflies[1], 13000);
 			}
