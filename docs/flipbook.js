@@ -25,10 +25,8 @@ window.addEventListener('DOMContentLoaded', function() {
     const bindFlipBookEvents = function() {
         $("#flipbook").bind("turned", function(event, page, view) {
             currentPage = page;
-            console.log(currentPage);
             setFlipBookDimensions();
             if (shouldLazyLoadAgain) {
-                console.log('reinit')
                 reinitLazyLoading();   
                 shouldLazyLoadAgain = false;
             }
@@ -100,10 +98,10 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
     //Bind Resize Events
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', _.debounce(function() {
         $("#flipbook").turn("destroy");
         document.querySelector('.flipbook-wrapper').innerHTML = flipBook;
         initFlipBook(currentPage);
         setFlipBookDimensions();
-    })
+    }, 200));
 })
