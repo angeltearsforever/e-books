@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
         const clientWidth = window.innerWidth;
         if (clientWidth < 500) {
             var clientHeight = window.innerHeight / 2;
-            var spotifyWidth = '80px' 
+            var spotifyWidth = '80px';
             (spotifyWidth) ? document.querySelector('.dedication iframe').style.width = spotifyWidth : null;
         } else {
             var clientHeight = window.innerHeight;
