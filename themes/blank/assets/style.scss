@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
-$tablet: 465px;
+$tablet: 500px;
 $white: #fff;
 $slimegreen: #64e673;
 $content-padding: 5vw;
@@ -8,16 +8,22 @@ $desktop-content-padding: 13vw;
 
 html, body {
   background-color: #111;
-  margin: 0 auto;
-  padding: 30px 50px;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
 .controls {
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  z-index:2;
 }
 .button {
   cursor: pointer;
   margin: 5px;
+  border: 5px solid black;
   width: 30px;
   height: 30px;
   padding: 0;
@@ -30,8 +36,6 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
-  &:focus {outline: 0;}
   &:first-child {
     span {
       padding-bottom: 5px;
@@ -44,14 +48,7 @@ html, body {
 
 #flipbook{
   clear: both;
-  width:1200px;
-  height:465px;
-  margin: 10px;
-}
-#flipbook .page{
-  width:600px;
-  max-width:600px;
-  height:465px;
+  overflow: hidden;
 }
 .image-wrapper {
   width: 100%;
@@ -59,11 +56,10 @@ html, body {
 }
 .cover {
   width: 100%;
-  height: 465px;
   img {
     object-fit: cover;
     object-position: center;
-    width: 100%;
+    height: 100%;
     overflow: hidden;
   }
 }
@@ -76,8 +72,6 @@ html, body {
 }
 .qzine-page {
   background-color: $slimegreen;
-  width: 600px;
-  height: 465px;
     h1, h2, h3, h4, h5, h6, p {
       font-family: 'Open Sans';
       color: $white;
@@ -115,19 +109,16 @@ html, body {
   }
   .video-embed {
     background-color: black;
-    width: 600px;
-    height: 465px;
     overflow:hidden;
     iframe {
-      transform: translate(-32%, -24%);
-      overflow:hidden;
+      overflow: hidden;
       object-position: center;
-      width: calc(195vw - (#{$content-padding} * 2));
-      height: calc(119vw - (#{$content-padding} * 2 * .61));
-      @media screen and (min-width: 1028px) {
-        width: calc(205vw - (#{$desktop-content-padding} * 2));
-        height: calc(125vw - (#{$desktop-content-padding} * 2 * .61));
-      }
+    }
+    .mystery-train {
+      transform: translate(5%, -12%);
+    }
+    .mrs-doubtfire {
+      transform: translate(10%, -12%);
     }
   }
   .images-with-text {
@@ -140,17 +131,17 @@ html, body {
       justify-content: stretch;
       align-items: stretch;
       text-align: center;
-      padding-left: 10px;
+      padding-left: 15px;
     }
     & > * {
       display: flex;
       flex-wrap: wrap;
     }
     img {
-      height: 425px;
       width: 100%;
       object-fit: cover;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
+      min-height: 70vh;
     }
   }
   

@@ -18,6 +18,8 @@
 	crossorigin="anonymous"></script>
 	
 	<script src="https://hbalenda.github.io/angeltears/turn.js"></script>
+	
+	<script src="https://hbalenda.github.io/angeltears/flipbook.js"></script>
 	<link rel="alternate" type="application/rss+xml" href="https://hbalenda.github.io/angeltears/index.xml" title="Angel Tears">
 </head>
 <body>
@@ -77,19 +79,6 @@ In Memory of Bevin
 
 	<script>
 		window.addEventListener('DOMContentLoaded', function() {
-			$("#flipbook").turn({
-				width: 1200,
-				height: 465,
-				autoCenter: true,
-			 
-			});
-			$("#previous").click(function() {
-				$("#flipbook").turn("previous");
-			});
-
-			$("#next").click(function() {
-				$("#flipbook").turn("next");
-			});
 			var butterflies = document.querySelectorAll('.butterfly');
 			function getRandomArbitrary(min, max) {
 				return Math.random() * (max - min) + min;
@@ -107,6 +96,7 @@ In Memory of Bevin
 				animateButterfly(butterflies[0], 9000);
 				animateButterfly(butterflies[1], 13000);
 			}
+
 		})
 	</script>
 </body>

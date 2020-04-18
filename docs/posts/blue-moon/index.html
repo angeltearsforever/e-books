@@ -18,6 +18,8 @@
 	
 	<script src="https://hbalenda.github.io/angeltears/turn.js"></script>
 	
+	<script src="https://hbalenda.github.io/angeltears/flipbook.js"></script>
+	
 </head>
 <body>
 	<header>
@@ -58,7 +60,7 @@
     </div>
     <div class="qzine-page video-embed-wrapper">
         <div class="video-embed">
-            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408426756?background=1&autoplay=1" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe class="lazyload mystery-train" data-src="https://player.vimeo.com/video/408426756?background=1&autoplay=1" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -87,7 +89,7 @@
     </div>
     <div class="qzine-page video-embed-wrapper">
         <div class="video-embed">
-            <iframe class="lazyload" data-src="https://player.vimeo.com/video/408428031?background=1&autoplay=1" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe class="lazyload mrs-doubtfire" data-src="https://player.vimeo.com/video/408428031?background=1&autoplay=1" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -143,7 +145,7 @@
         <div class="images-with-text">
             <div>
                 <img data-src="../../images/3miamibluesboyR.jpg" id="3miamibluesboyR" class="lazyload"/>
-                <p>6. Oreos from Target</p>
+                <p>Oreos from Target</p>
             </div>
         </div>
     </div>
@@ -173,7 +175,7 @@
         <div class="images-with-text">
             <div>
                 <img data-src="../../images/4preludegirlL.jpg" id="4preludegirlL" class="lazyload"/>
-                <p>7. A jumbo box of Wheat Thins from Costco</p>
+                <p>A jumbo box of Wheat Thins from Costco</p>
             </div>
         </div>
     </div>
@@ -210,7 +212,7 @@
         <div class="images-with-text">
             <div>
                 <img data-src="../../images/5shadowgirlL.jpg" id="5shadowgirlL" class="lazyload"/>
-                <p>9. Loopy Mango Merino No. 5 Yarn for knitting beanies</p>
+                <p>Loopy Mango Merino No. 5 Yarn for knitting beanies</p>
             </div>
         </div>
     </div>
@@ -284,19 +286,6 @@
 
 	<script>
 		window.addEventListener('DOMContentLoaded', function() {
-			$("#flipbook").turn({
-				width: 1200,
-				height: 465,
-				autoCenter: true,
-			 
-			});
-			$("#previous").click(function() {
-				$("#flipbook").turn("previous");
-			});
-
-			$("#next").click(function() {
-				$("#flipbook").turn("next");
-			});
 			var butterflies = document.querySelectorAll('.butterfly');
 			function getRandomArbitrary(min, max) {
 				return Math.random() * (max - min) + min;
@@ -314,6 +303,7 @@
 				animateButterfly(butterflies[0], 9000);
 				animateButterfly(butterflies[1], 13000);
 			}
+
 		})
 	</script>
 </body>

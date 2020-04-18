@@ -17,6 +17,8 @@
 	crossorigin="anonymous"></script>
 	{{ $turn := resources.Get "turn.js" }}
 	<script src="{{$turn.Permalink}}"></script>
+	{{ $flipbook := resources.Get "flipbook.js" }}
+	<script src="{{$flipbook.Permalink}}"></script>
 	{{ with .OutputFormats.Get "RSS" -}}
 		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
@@ -27,19 +29,6 @@
 	{{ partial "footer" . }}
 	<script>
 		window.addEventListener('DOMContentLoaded', function() {
-			$("#flipbook").turn({
-				width: 1200,
-				height: 465,
-				autoCenter: true,
-			/*     display: 'single' */
-			});
-			$("#previous").click(function() {
-				$("#flipbook").turn("previous");
-			});
-
-			$("#next").click(function() {
-				$("#flipbook").turn("next");
-			});
 			var butterflies = document.querySelectorAll('.butterfly');
 			function getRandomArbitrary(min, max) {
 				return Math.random() * (max - min) + min;
@@ -57,6 +46,7 @@
 				animateButterfly(butterflies[0], 9000);
 				animateButterfly(butterflies[1], 13000);
 			}
+
 		})
 	</script>
 </body>
