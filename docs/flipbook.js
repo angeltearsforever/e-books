@@ -4,6 +4,9 @@ window.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             if (document.querySelectorAll('[page]').length) {
                 document.querySelector('.flipbook-wrapper').classList.remove('is-hidden');
+                document.querySelector('.controls-container').classList.remove('is-hidden');
+                document.querySelector('.angel').classList.remove('is-hidden');
+                document.querySelector('.spotify-wrapper').classList.remove('is-hidden');
             } else if (counter > 9) {
                 alert(':( God should\'ve spent a little more time on this page.')
                 return;
@@ -166,12 +169,26 @@ window.addEventListener('DOMContentLoaded', function() {
     
     // Bind Resize Events
     window.addEventListener('resize', _.debounce(function() {
-        //Destroy and restart flipbook
+        //Hide FlipBook
+        document.querySelector('.flipbook-wrapper').style.display = 'none';
+        document.querySelector('.angel').style.display = 'none';
+        document.querySelector('.controls-container').style.display = 'none';
+        document.querySelector('.flipbook-wrapper').classList.add('is-hidden');
+        document.querySelector('.controls-container').classList.add('is-hidden');
+        document.querySelector('.spotify-wrapper').classList.add('is-hidden');
+        document.querySelector('.angel').classList.add('is-hidden');
         //move mouse to the middle again to prevent weird reflow
         root.style.setProperty('--mouse-x', '65%');
         root.style.setProperty('--mouse-y', '20%');
         $("#flipbook").turn("destroy");
         document.querySelector('.flipbook-wrapper').innerHTML = flipBook;
+        document.querySelector('.flipbook-wrapper').style.display = 'block';
+        document.querySelector('.angel').style.display = 'block';
+        document.querySelector('.controls-container').style.display = 'block';
+    }, 125, {leading: true, trailing: false}));
+    window.addEventListener('resize', _.debounce(function() {
+        //Destroy and restart flipbook
         initFlipBook(currentPage);
-    }, 200));
+        showFlipBook(0);
+    }, 125, {leading: false, trailing: true}));
 })

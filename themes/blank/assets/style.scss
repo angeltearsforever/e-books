@@ -136,12 +136,12 @@ img {
   width: 100vw;
   height: 100vh;
 }
-.flipbook-wrapper {
+.flipbook-wrapper, .controls-container, .angel {
   opacity: 1;
   transition: opacity .5s;
-  &.is-hidden {
-    opacity: 0;
-  }
+}
+.is-hidden {
+  opacity: 0!important;
 }
 #flipbook{
   z-index: 2;
@@ -230,6 +230,7 @@ img {
   height: 100%;
   width: 100%;
   position: relative;
+  background-color: black;
   iframe {
     overflow: hidden;
     position: absolute;
