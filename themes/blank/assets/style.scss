@@ -48,14 +48,16 @@ html, body {
   height: 100%;
   z-index: 3;
 }
-.lazyload,
-.lazyloading {
-  opacity: 0;
-  transition: opacity 300ms;
-}
-.lazyloaded {
-  opacity: 1!important;
-  transition: opacity 300ms;
+img { 
+  &.lazyload,
+  &.lazyloading {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+  &.lazyloaded {
+    opacity: 1!important;
+    transition: opacity 300ms;
+  }
 }
 .controls-container {
   position: absolute;
@@ -226,10 +228,15 @@ html, body {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+    }
+    img {
+      overflow: hidden;
+      position: absolute;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       transition: opacity 300ms;
-      &.lazyload, &.lazyloading {
-        opacity: 0;
-      }
     }
   }
   .images-with-text {

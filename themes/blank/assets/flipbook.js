@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
         $("#flipbook").turn({
             width: window.qzine.clientWidth,
             height: window.qzine.flipBookHeight,
-            page: page,
+            page: 20,
             autoCenter: true,
             duration: 1000,
         });
@@ -33,28 +33,10 @@ window.addEventListener('DOMContentLoaded', function() {
     const bindFlipBookEvents = function() {
         $("#flipbook").bind("turned", function(event, page, view) {
             currentPage = page;
-            if (lazyLoadAllTheTimeNow) {
-                setTimeout(function() {
-                    if (direction == 'back') {
-                        reinitLazyLoading(document.querySelector(`[page="${page}"] iframe.lazyloaded`))
-                    } else {
-                        reinitLazyLoading(document.querySelector(`[page="${page + 1}"] iframe.lazyloaded`))
-                    }
-                }, 10);
-            }
         });
 
         const controls = document.querySelector('.controls');
         $("#flipbook").bind("turning", function(event, page, view) {
-            if (page < currentPage) {
-                //moving backwards
-                // if page is 4 lazy load 2 and 3
-                lazyLoadAllTheTimeNow = true;
-                direction = "back";
-            } else {
-                direction = "forward";
-            }
-
             // Hide/show first last controls
             if (view.length == 1) {
                 if (page == 1) {
@@ -77,12 +59,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('.spotify-wrapper').style.opacity = 0;
                 document.querySelector('.spotify-wrapper').style.zIndex = -1;
             }
-        });
-        $("#flipbook").bind("first", function(event) {
-            controls.classList.add('first');
-        });
-        $("#flipbook").bind("last", function(event) {
-            controls.classList.add('last');
         });
     }
     const bindMouseEvents = function () {
@@ -130,12 +106,6 @@ window.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.spotify-wrapper iframe').style.width = spotifyWidth;
         } else {
             document.querySelector('.spotify-wrapper iframe').style.width = '300px';
-        }
-    }
-    const reinitLazyLoading = function(image) {
-        if (image) {
-            image.classList.remove('lazyloaded');
-            image.classList.add('lazyload');
         }
     }
     const setGlobalDimensions = function() {
