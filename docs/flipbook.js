@@ -141,9 +141,6 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.angel').style.display = 'block';
         document.querySelector('.controls-container').style.display = 'block';
     }
-    const onResizeTrailing = function() {
-
-    }
     const setGlobalVariables = function() {
         window.qzine = {};
         window.qzine.clientWidth = window.innerWidth;
