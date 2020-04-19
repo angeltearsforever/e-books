@@ -222,10 +222,13 @@ img {
     padding: 50px;
   }
 }
+.video-embed-wrapper {
+  background-color: black;
+}
 .video-embed {
-  background-color: none;
   overflow:hidden;
   height: 100%;
+  width: 100%;
   position: relative;
   iframe {
     overflow: hidden;
