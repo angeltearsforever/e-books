@@ -4,8 +4,6 @@ $tablet: 500px;
 $desktop: 1000px;
 $white: #fff;
 $slimegreen: #64e673;
-$content-padding: 5vw;
-$desktop-content-padding: 13vw;
 
 .left .angel {
   transform: scaleX(-1);
@@ -47,23 +45,43 @@ html, body {
 }
 .controls {
   display: flex;
-  justify-content: flex-end;
   position: absolute;
-  top: 0;
-  z-index:3;
-  display: none;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  & > *:first-child {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  & > *:last-child {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &.first {
+    & > *:first-child {
+      display: none;
+    }
+  }
+  &.last {
+    & > *:last-child {
+      display: none;
+    }
+  }
 }
 .button {
-  margin: 5px;
+  margin: 30px;
   border: 3px solid black;
   width: 30px;
   height: 30px;
-  padding: 0;
+  padding: 4px;
   border-radius: 50px;
   background-color: $slimegreen;
   color: black;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 0;
   display: flex;
   justify-content: center;

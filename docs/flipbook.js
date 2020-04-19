@@ -22,10 +22,24 @@ window.addEventListener('DOMContentLoaded', function() {
                 shouldLazyLoadAgain = false;
             }
         });
-    
+
+        const controls = document.querySelector('.controls');
         $("#flipbook").bind("turning", function(event, page, view) {
             if (page < currentPage) {
                 shouldLazyLoadAgain = true;
+            }
+            if (view.length == 1) {
+                if (page == 1) {
+                    controls.classList.add('first');
+                } else {
+                    controls.classList.add('last');
+                }
+            } else {
+                if (controls.classList.contains('first')) {
+                    controls.classList.remove('first');
+                } else {
+                    controls.classList.remove('last');
+                }
             }
             if (page == '2' || page == '3') {
                 document.querySelector('.spotify-wrapper').style.opacity = 1;
@@ -33,20 +47,28 @@ window.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('.spotify-wrapper').style.opacity = 0;
             }
         });
+        $("#flipbook").bind("first", function(event) {
+            controls.classList.add('first');
+        });
+        $("#flipbook").bind("last", function(event) {
+            controls.classList.add('last');
+        });
     }
     const bindMouseEvents = function () {
         const body = document.querySelector('body');
         let root = document.documentElement;
 
         root.addEventListener("mousemove", e => {
-        root.style.setProperty('--mouse-x', e.clientX + "px");
-        root.style.setProperty('--mouse-y', e.clientY + "px");
             if (e.pageX < window.qzine.singlePageWidth) {
                 body.classList.remove('right');
                 body.classList.add('left');
+                root.style.setProperty('--mouse-x', e.clientX - 25 + "px");
+                root.style.setProperty('--mouse-y', e.clientY - 45 + "px");
             } else {
                 body.classList.remove('left');
                 body.classList.add('right');
+                root.style.setProperty('--mouse-x', e.clientX - 55 + "px");
+                root.style.setProperty('--mouse-y', e.clientY - 45 + "px");
             }
         });
     }
