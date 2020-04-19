@@ -16,6 +16,10 @@ $slimegreen: #64e673;
   top: var(--mouse-y);
   z-index: 77;
   pointer-events: none;
+  @media screen and (max-width: $tablet) {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 :root {
@@ -43,13 +47,20 @@ html, body {
   height: 100%;
   z-index: 2;
 }
+.controls-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
 .controls {
   display: flex;
+  z-index: 3;
+  width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 3;
-  width: 100%;
   & > *:first-child {
     flex: 1 1 100%;
     display: flex;
@@ -74,7 +85,6 @@ html, body {
 .button {
   margin: 30px;
   border: 3px solid black;
-  width: 30px;
   height: 30px;
   padding: 4px;
   border-radius: 50px;
@@ -86,6 +96,10 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 30px;
+  @media screen and (max-width: $tablet) {
+    margin: 10px;
+  }
   &:first-child {
     span {
       padding-bottom: 5px;
@@ -103,6 +117,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 .flipbook-wrapper, .angel-tears {
+  overflow:hidden;
   z-index: 1;
   width: 100vw;
   height: 100vh;

@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
     const flipBook = document.querySelector('.flipbook-wrapper').innerHTML;
+
     const initFlipBook = function(page) {
         setGlobalDimensions();
 
@@ -28,6 +29,11 @@ window.addEventListener('DOMContentLoaded', function() {
             if (page < currentPage) {
                 shouldLazyLoadAgain = true;
             }
+            if (page == '2' || page == '3') {
+                document.querySelector('.spotify-wrapper').style.opacity = 1;
+            } else {
+                document.querySelector('.spotify-wrapper').style.opacity = 0;
+            }
             if (view.length == 1) {
                 if (page == 1) {
                     controls.classList.add('first');
@@ -40,11 +46,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 } else {
                     controls.classList.remove('last');
                 }
-            }
-            if (page == '2' || page == '3') {
-                document.querySelector('.spotify-wrapper').style.opacity = 1;
-            } else {
-                document.querySelector('.spotify-wrapper').style.opacity = 0;
             }
         });
         $("#flipbook").bind("first", function(event) {
@@ -139,20 +140,18 @@ window.addEventListener('DOMContentLoaded', function() {
     initFlipBook(currentPage);
 
     //Bind Click Events
-    $("#previous").click(function() {
+    $("#previous").mousedown(function(e) {
         $("#flipbook").turn("previous");
-        currentPage = currentPage-2;
     });
     
-    $("#next").click(function() {
+    $("#next").mousedown(function(e) {
         $("#flipbook").turn("next");
-        currentPage = currentPage+2;
     });
 
     //Bind Mouse Events
     bindMouseEvents();
     
-    //Bind Resize Events
+    // Bind Resize Events
     window.addEventListener('resize', _.debounce(function() {
         //Destroy and restart flipbook
         $("#flipbook").turn("destroy");
