@@ -52,6 +52,8 @@ window.addEventListener('DOMContentLoaded', function() {
                     controls.classList.remove('last');
                 }
             }
+            //Set Image Heights 
+            setImageHeights();
             //Hide/show Spotify
             if (page == '2' || page == '3') {
                 document.querySelector('.spotify-wrapper').style.opacity = 1;
@@ -80,6 +82,11 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    const setImageHeights = function() {
+        document.querySelectorAll('.images-with-text img').forEach(function(img) {
+            img.style.height = (window.qzine.flipBookHeight * .7) + 'px';
+        })
+    }
     const setFlipBookDimensions = function() {
         var flipbook = document.querySelector('#flipbook');
         var spotifywrapper = document.querySelector('.spotify-wrapper');
@@ -101,9 +108,7 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.video-embed iframe').forEach(function(embed) {
             embed.style.width = (window.qzine.singlePageWidth) + 'px';
         })
-        document.querySelectorAll('.images-with-text img').forEach(function(img) {
-            img.style.height = (window.qzine.flipBookHeight * .7) + 'px';
-        })
+        setImageHeights();
         controls.style.right = window.qzine.controlsOffset;
         spotifywrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
         spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
