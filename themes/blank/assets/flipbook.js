@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
         $("#flipbook").turn({
             width: window.qzine.clientWidth,
             height: window.qzine.flipBookHeight,
-            page: 20,
+            page: page,
             autoCenter: true,
             duration: 1000,
         });
@@ -104,6 +104,8 @@ window.addEventListener('DOMContentLoaded', function() {
         if (window.qzine.clientWidth < 500) {
             var spotifyWidth = '80px';
             document.querySelector('.spotify-wrapper iframe').style.width = spotifyWidth;
+            // hamburger style phone controls should
+
         } else {
             document.querySelector('.spotify-wrapper iframe').style.width = '300px';
         }
