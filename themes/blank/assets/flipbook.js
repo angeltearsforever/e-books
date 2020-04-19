@@ -34,7 +34,6 @@ window.addEventListener('DOMContentLoaded', function() {
         $("#flipbook").bind("turned", function(event, page, view) {
             currentPage = page;
             if (lazyLoadAllTheTimeNow) {
-                console.log('lazyLoadAllTheTimeNow')
                 setTimeout(function() {
                     if (direction == 'back') {
                         reinitLazyLoading(document.querySelector(`[page="${page}"] iframe.lazyloaded`))
@@ -165,7 +164,6 @@ window.addEventListener('DOMContentLoaded', function() {
     ////////////////////////
     //declare global variables
     var currentPage = 1;
-    var lazyLoadAllTheTimeNow = false;
     var direction = 'forward';
     //Initialize FlipBook
     initFlipBook(currentPage);
