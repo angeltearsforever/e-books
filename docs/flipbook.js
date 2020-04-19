@@ -33,6 +33,7 @@ window.addEventListener('DOMContentLoaded', function() {
         bindFlipBookEvents();
         //Set Flipbook Dimensions
         setFlipBookDimensions();
+        showFlipBook(0);
     }
     const bindFlipBookEvents = function() {
         $("#flipbook").bind("turned", function(event, page, view) {
@@ -123,6 +124,26 @@ window.addEventListener('DOMContentLoaded', function() {
             controls.style.top = 'unset';
         }
     }
+    const onResizeLeading = function() {
+        document.querySelector('.flipbook-wrapper').style.display = 'none';
+        document.querySelector('.angel').style.display = 'none';
+        document.querySelector('.controls-container').style.display = 'none';
+        document.querySelector('.flipbook-wrapper').classList.add('is-hidden');
+        document.querySelector('.controls-container').classList.add('is-hidden');
+        document.querySelector('.spotify-wrapper').classList.add('is-hidden');
+        document.querySelector('.angel').classList.add('is-hidden');
+        //move mouse to the middle again to prevent weird reflow
+        root.style.setProperty('--mouse-x', '65%');
+        root.style.setProperty('--mouse-y', '20%');
+        $("#flipbook").turn("destroy");
+        document.querySelector('.flipbook-wrapper').innerHTML = flipBook;
+        document.querySelector('.flipbook-wrapper').style.display = 'block';
+        document.querySelector('.angel').style.display = 'block';
+        document.querySelector('.controls-container').style.display = 'block';
+    }
+    const onResizeTrailing = function() {
+
+    }
     const setGlobalVariables = function() {
         window.qzine = {};
         window.qzine.clientWidth = window.innerWidth;
@@ -153,7 +174,6 @@ window.addEventListener('DOMContentLoaded', function() {
     const root = document.documentElement;
     //Initialize FlipBook
     initFlipBook(currentPage);
-    showFlipBook(0);
 
     //Bind Click Events
     $("#previous").mousedown(function(e) {
@@ -168,27 +188,19 @@ window.addEventListener('DOMContentLoaded', function() {
     bindMouseEvents();
     
     // Bind Resize Events
-    window.addEventListener('resize', _.debounce(function() {
-        //Hide FlipBook
-        document.querySelector('.flipbook-wrapper').style.display = 'none';
-        document.querySelector('.angel').style.display = 'none';
-        document.querySelector('.controls-container').style.display = 'none';
-        document.querySelector('.flipbook-wrapper').classList.add('is-hidden');
-        document.querySelector('.controls-container').classList.add('is-hidden');
-        document.querySelector('.spotify-wrapper').classList.add('is-hidden');
-        document.querySelector('.angel').classList.add('is-hidden');
-        //move mouse to the middle again to prevent weird reflow
-        root.style.setProperty('--mouse-x', '65%');
-        root.style.setProperty('--mouse-y', '20%');
-        $("#flipbook").turn("destroy");
-        document.querySelector('.flipbook-wrapper').innerHTML = flipBook;
-        document.querySelector('.flipbook-wrapper').style.display = 'block';
-        document.querySelector('.angel').style.display = 'block';
-        document.querySelector('.controls-container').style.display = 'block';
-    }, 125, {leading: true, trailing: false}));
-    window.addEventListener('resize', _.debounce(function() {
-        //Destroy and restart flipbook
-        initFlipBook(currentPage);
-        showFlipBook(0);
-    }, 125, {leading: false, trailing: true}));
+    if (window.innerWidth < 1000 && window.onorientationchange) {
+        window.addEventListener('orientationchange', function() {
+            onResizeLeading();
+            initFlipBook(currentPage);
+        });
+    } else {
+        window.addEventListener('resize', _.debounce(function() {
+            //Hide FlipBook
+            onResizeLeading();
+        }, 125, {leading: true, trailing: false}));
+        window.addEventListener('resize', _.debounce(function() {
+            //Destroy and restart flipbook
+            initFlipBook(currentPage);
+        }, 125, {leading: false, trailing: true}));
+    }
 })
