@@ -34,6 +34,7 @@ html {
 }
 html, body {
   background-color: #111;
+  z-index: 2;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -45,7 +46,16 @@ html, body {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 3;
+}
+.lazyload,
+.lazyloading {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.lazyloaded {
+  opacity: 1!important;
+  transition: opacity 300ms;
 }
 .controls-container {
   position: absolute;
@@ -56,7 +66,7 @@ html, body {
 }
 .controls {
   display: flex;
-  z-index: 3;
+  z-index: 4;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -97,7 +107,7 @@ html, body {
   justify-content: center;
   align-items: center;
   width: 30px;
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $desktop) {
     margin: 10px;
   }
   &:first-child {
@@ -112,18 +122,17 @@ html, body {
 .spotify-wrapper {
   opacity: 0;
   position: absolute;
-  transition: opacity .5s;
-  z-index:2;
+  z-index: 3;
   transform: translate(-50%, -50%);
 }
 .flipbook-wrapper, .angel-tears {
   overflow:hidden;
-  z-index: 1;
+  z-index: 2;
   width: 100vw;
   height: 100vh;
 }
 #flipbook{
-  z-index: 1;
+  z-index: 2;
   clear: both;
   overflow: hidden;
 }
@@ -207,6 +216,10 @@ html, body {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      transition: opacity 300ms;
+      &.lazyload, &.lazyloading {
+        opacity: 0;
+      }
     }
   }
   .images-with-text {
@@ -233,6 +246,7 @@ html, body {
       object-fit: cover;
       height: 70vh;
       padding-bottom: 15px;
+      opacity: 0;
       @media screen and (max-width: $tablet) {
         padding-bottom: 7px;
       }
