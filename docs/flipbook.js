@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const flipBook = document.querySelector('.flipbook-wrapper').innerHTML;
 
     const initFlipBook = function(page) {
-        setGlobalDimensions();
+        setGlobalVariables();
 
         $("#flipbook").turn({
             width: window.qzine.clientWidth,
@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded', function() {
             autoCenter: true,
             duration: 1000,
         });
+        window.qzine.length = $("#flipbook").turn("pages");
         bindFlipBookEvents();
         //Set Flipbook Dimensions
         setFlipBookDimensions();
@@ -35,19 +36,19 @@ window.addEventListener('DOMContentLoaded', function() {
             currentPage = page;
         });
 
-        const controls = document.querySelector('.controls');
         $("#flipbook").bind("turning", function(event, page, view) {
+            const controls = document.querySelector('.controls');
             // Hide/show first last controls
-            if (view.length == 1) {
-                if (page == 1) {
-                    controls.classList.add('first');
-                } else {
-                    controls.classList.add('last');
-                }
+            if (view.includes(1)) {
+                controls.classList.add('first');
+                controls.classList.remove('last');
+            } else if (view.includes(window.qzine.length)) {
+                controls.classList.add('last');
+                controls.classList.remove('first');
             } else {
                 if (controls.classList.contains('first')) {
                     controls.classList.remove('first');
-                } else {
+                } else if (controls.classList.contains('last')) {
                     controls.classList.remove('last');
                 }
             }
@@ -80,8 +81,13 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
     const setFlipBookDimensions = function() {
-        document.querySelector('#flipbook').style.height = window.qzine.flipBookHeight + 'px';
-        document.querySelector('#flipbook').style.width = window.qzine.clientWidth + 'px';
+        var flipbook = document.querySelector('#flipbook');
+        var spotifywrapper = document.querySelector('.spotify-wrapper');
+        var spotifyiframe = document.querySelector('.spotify-wrapper iframe');
+        var controls = document.querySelector('.controls');
+
+        flipbook.style.height = window.qzine.flipBookHeight + 'px';
+        flipbook.style.width = window.qzine.clientWidth + 'px';
         let translateY = (window.innerHeight - window.qzine.flipBookHeight) / 2;
         document.querySelector('.angel-tears').style.transform ='translateY('+ translateY + 'px' + ')';
         document.querySelectorAll('#flipbook .page').forEach(function(page) {
@@ -98,19 +104,21 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.images-with-text img').forEach(function(img) {
             img.style.height = (window.qzine.flipBookHeight * .7) + 'px';
         })
-        document.querySelector('.controls').style.right = window.qzine.controlsOffset;
-        document.querySelector('.spotify-wrapper').style.left = (window.qzine.clientWidth / 4) + 'px';
-        document.querySelector('.spotify-wrapper').style.top = (window.qzine.flipBookHeight / 2) + 'px';
+        controls.style.right = window.qzine.controlsOffset;
+        spotifywrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
+        spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
+
         if (window.qzine.clientWidth < 500) {
             var spotifyWidth = '80px';
-            document.querySelector('.spotify-wrapper iframe').style.width = spotifyWidth;
-            // hamburger style phone controls should
-
+            spotifyiframe.style.width = spotifyWidth;
+            // hamburger style phone controls should be under zine
+            controls.style.top = window.qzine.flipBookHeight + translateY + 'px';
         } else {
-            document.querySelector('.spotify-wrapper iframe').style.width = '300px';
+            spotifyiframe.style.width = '300px';
+            controls.style.top = 'unset';
         }
     }
-    const setGlobalDimensions = function() {
+    const setGlobalVariables = function() {
         window.qzine = {};
         window.qzine.clientWidth = window.innerWidth;
             if (window.qzine.clientWidth < 500) {
@@ -136,7 +144,6 @@ window.addEventListener('DOMContentLoaded', function() {
     ////////////////////////
     //declare global variables
     var currentPage = 1;
-    var direction = 'forward';
     //Initialize FlipBook
     initFlipBook(currentPage);
     showFlipBook(0);
