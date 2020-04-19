@@ -161,6 +161,9 @@ img {
 }
 .front-cover {
   background-image: url('../angeltears/images/qzinefrontcover.jpg');
+  @media screen and (max-width: $desktop) {
+    background-image: url('../angeltears/images/qzinefrontcover-mobile.jpg');
+  }
   background-position: center;
 }
 .back-cover {
