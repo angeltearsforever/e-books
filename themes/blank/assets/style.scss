@@ -277,6 +277,9 @@ img {
     display: flex;
     flex-wrap: wrap;
   }
+  picture {
+    width: 100%;
+  }
   img {
     width: 100%;
     object-fit: cover;
