@@ -1,4 +1,19 @@
 window.addEventListener('DOMContentLoaded', function() {
+
+    const showFlipBook = function(counter) {
+        setTimeout(function() {
+            if (document.querySelectorAll('[page]').length) {
+                document.querySelector('.flipbook-wrapper').classList.remove('is-hidden');
+            } else if (counter > 9) {
+                alert(':( God should\'ve spent a little more time on this page.')
+                return;
+            } else {
+                showFlipBook(counter);
+            }
+            counter ++;
+        }, 500);
+    };
+
     const flipBook = document.querySelector('.flipbook-wrapper').innerHTML;
 
     const initFlipBook = function(page) {
@@ -9,15 +24,15 @@ window.addEventListener('DOMContentLoaded', function() {
             height: window.qzine.flipBookHeight,
             page: page,
             autoCenter: true,
+            duration: 1000,
         });
         bindFlipBookEvents();
         //Set Flipbook Dimensions
-        setFlipBookDimensions(page);
+        setFlipBookDimensions();
     }
     const bindFlipBookEvents = function() {
         $("#flipbook").bind("turned", function(event, page, view) {
             currentPage = page;
-            setFlipBookDimensions(currentPage);
             if (lazyLoadAllTheTimeNow) {
                 console.log('lazyLoadAllTheTimeNow')
                 setTimeout(function() {
@@ -26,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     } else {
                         reinitLazyLoading(document.querySelector(`[page="${page + 1}"] iframe.lazyloaded`))
                     }
-                }, 50);
+                }, 10);
             }
         });
 
@@ -89,10 +104,7 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    const setFlipBookDimensions = function(page) {
-        //Update global width variables
-        setGlobalDimensions();
-
+    const setFlipBookDimensions = function() {
         document.querySelector('#flipbook').style.height = window.qzine.flipBookHeight + 'px';
         document.querySelector('#flipbook').style.width = window.qzine.clientWidth + 'px';
         let translateY = (window.innerHeight - window.qzine.flipBookHeight) / 2;
@@ -114,6 +126,12 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.controls').style.right = window.qzine.controlsOffset;
         document.querySelector('.spotify-wrapper').style.left = (window.qzine.clientWidth / 4) + 'px';
         document.querySelector('.spotify-wrapper').style.top = (window.qzine.flipBookHeight / 2) + 'px';
+        if (window.qzine.clientWidth < 500) {
+            var spotifyWidth = '80px';
+            document.querySelector('.spotify-wrapper iframe').style.width = spotifyWidth;
+        } else {
+            document.querySelector('.spotify-wrapper iframe').style.width = '300px';
+        }
     }
     const reinitLazyLoading = function(image) {
         if (image) {
@@ -127,8 +145,6 @@ window.addEventListener('DOMContentLoaded', function() {
             if (window.qzine.clientWidth < 500) {
                 window.qzine.controlsOffset = 0;
                 window.qzine.flipBookHeight = window.qzine.clientWidth * .54;
-                var spotifyWidth = '80px';
-                document.querySelector('.spotify-wrapper iframe').style.width = spotifyWidth;
             } else if (window.qzine.clientWidth < 1000 && window.qzine.clientWidth > window.innerHeight) {
                 //Hot Dog Style Phone or Tablet
                 window.qzine.flipBookHeight = window.innerHeight;
@@ -153,6 +169,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var direction = 'forward';
     //Initialize FlipBook
     initFlipBook(currentPage);
+    showFlipBook(0);
 
     //Bind Click Events
     $("#previous").mousedown(function(e) {

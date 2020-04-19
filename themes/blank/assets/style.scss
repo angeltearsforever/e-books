@@ -131,6 +131,13 @@ html, body {
   width: 100vw;
   height: 100vh;
 }
+.flipbook-wrapper {
+  opacity: 1;
+  transition: opacity .5s;
+  &.is-hidden {
+    opacity: 0;
+  }
+}
 #flipbook{
   z-index: 2;
   clear: both;
@@ -166,6 +173,9 @@ html, body {
   justify-content: center;
   width: 100%;
   margin: 40px 0;
+  iframe {
+    width: 100%;
+  }
 }
 .qzine-page {
   background-color: $slimegreen;
