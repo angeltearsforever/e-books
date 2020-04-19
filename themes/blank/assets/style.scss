@@ -223,7 +223,7 @@ img {
   }
 }
 .video-embed {
-  background-color: black;
+  background-color: none;
   overflow:hidden;
   height: 100%;
   position: relative;
@@ -234,7 +234,7 @@ img {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: black;
+    background: none;
   }
   img {
     overflow: hidden;
