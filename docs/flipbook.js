@@ -65,9 +65,6 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
     const bindMouseEvents = function () {
-        const body = document.querySelector('body');
-        let root = document.documentElement;
-
         root.addEventListener("mousemove", e => {
             if (e.pageX < window.qzine.singlePageWidth) {
                 body.classList.remove('right');
@@ -149,6 +146,8 @@ window.addEventListener('DOMContentLoaded', function() {
     ////////////////////////
     //declare global variables
     var currentPage = 1;
+    const body = document.querySelector('body');
+    const root = document.documentElement;
     //Initialize FlipBook
     initFlipBook(currentPage);
     showFlipBook(0);
@@ -168,6 +167,9 @@ window.addEventListener('DOMContentLoaded', function() {
     // Bind Resize Events
     window.addEventListener('resize', _.debounce(function() {
         //Destroy and restart flipbook
+        //move mouse to the middle again to prevent weird reflow
+        root.style.setProperty('--mouse-x', '65%');
+        root.style.setProperty('--mouse-y', '20%');
         $("#flipbook").turn("destroy");
         document.querySelector('.flipbook-wrapper').innerHTML = flipBook;
         initFlipBook(currentPage);

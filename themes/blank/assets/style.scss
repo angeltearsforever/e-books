@@ -184,265 +184,93 @@ img {
 }
 .qzine-page {
   background-color: $slimegreen;
-    h1, h2, h3, h4, h5, h6, p {
-      font-family: 'Open Sans';
-      color: $white;
-      line-height: 1.4em;
-      text-align: center;
-      letter-spacing: .05rem;
-    }
-    h1 {
-      font-size: 36px;
-    }
-    p {
-      font-size: 11px;
-      margin: 0;
-      color: black;
-      @media screen and (max-width: $tablet) {
-        font-size: 8px;
-      }
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Open Sans';
+    color: $white;
+    line-height: 1.4em;
+    text-align: center;
+    letter-spacing: .05rem;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 11px;
+    margin: 0;
+    color: black;
+    @media screen and (max-width: $tablet) {
+      font-size: 8px;
     }
   }
+}
 
-  .dedication {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.dedication {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.video-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    padding: 50px;
   }
-  .video-caption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    p {
-      padding: 50px;
-    }
-  }
-  .video-embed {
-    background-color: black;
-    overflow:hidden;
+}
+.video-embed {
+  background-color: black;
+  overflow:hidden;
+  height: 100%;
+  position: relative;
+  iframe {
+    overflow: hidden;
+    position: absolute;
     height: 100%;
-    position: relative;
-    iframe {
-      overflow: hidden;
-      position: absolute;
-      height: 100%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-    img {
-      overflow: hidden;
-      position: absolute;
-      height: 100%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      transition: opacity 300ms;
-      background: black;
-      width: 100%;
-      object-fit: contain;
-    }
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
-  .images-with-text {
+  img {
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 300ms;
+    background: black;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+.images-with-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    flex: 1 1 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    p {
-      flex: 1 1 100%;
-      display: flex;
-      justify-content: stretch;
-      align-items: stretch;
-      text-align: left;
-      padding-left: 15px;
-      @media screen and (max-width: $tablet) {
-        padding-left: 7px;
-      }
-    }
-    & > * {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    img {
-      width: 100%;
-      object-fit: cover;
-      padding-bottom: 15px;
-      opacity: 0;
-      @media screen and (max-width: $tablet) {
-        padding-bottom: 7px;
-      }
+    justify-content: stretch;
+    align-items: stretch;
+    text-align: left;
+    padding-left: 15px;
+    @media screen and (max-width: $tablet) {
+      padding-left: 7px;
     }
   }
-  
-  //Butterfly
-  .butterfly:first-child {
-    --random-x: 100px; 
-    --random-y: 200px; 
+  & > * {
+    display: flex;
+    flex-wrap: wrap;
   }
-  
-  .butterfly:last-child {
-    --random-x: 200px; 
-    --random-y: 400px; 
-  }
-  
-  
-  .butterfly-wrapper {
-    position: absolute;
-    width: 100vw;
-    height: 200vh;
-  }
-  
-  .canvas {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-  }
-  
-  .butterfly-body {
-    width: 4px;
-    height: 25px;
-    border-radius: 10px;
-    background-color:rgba(255, 255, 255, 0.5);
-    
-    &:before {
-      position: absolute;
-      top: -5px;
-      left: -1px;
-      width: 1px;
-      height: 6px;
-      background-color:rgba(255, 255, 255, 0.5);
-      transform: rotate(-25deg);
-      content: '';
-    }
-    
-      &:after {
-      position: absolute;
-      top: -5px;
-      left: 4px;
-      width: 1px;
-      height: 6px;
-      background-color:rgba(255, 255, 255, 0.5);
-      transform: rotate(25deg);
-      content: '';
+  img {
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 15px;
+    opacity: 0;
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 7px;
     }
   }
-  
-  .butterfly {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    transform: translate(var(--random-x), var(--random-y));
-    transition: transform 5s linear;
-  }
-  
-  .butterfly-wing-1 {
-    transform: rotateY(60deg);
-    animation: Wing1 1s infinite;
-    
-    &:before {
-      position: absolute;
-      top: -9px;
-      left: 5px;
-      display: block;
-      width: 30px;
-      height: 20px;
-      transform: rotateX(0deg);
-      border-radius: 20px 5px;
-      background-color:rgba(255, 255, 255, 0.5);
-      content: '';
-    }
-    
-    &:after {
-      position: absolute;
-      top: 13px;
-      left: 5px;
-      display: block;
-      width: 30px;
-      height: 20px;
-      transform: rotateX(-170deg);
-      border-radius: 20px 5px;
-      background-color:rgba(255, 255, 255, 0.5);
-      content: '';
-    }
-  }
-  
-  .butterfly-wing-2 {
-    position: relative;
-    top: -1px;
-    transform: rotate(180deg) rotateY(60deg);
-    animation: Wing2 1s infinite;
-    
-      &:before {
-      position: absolute;
-      top: -9px;
-      left: 5px;
-      display: block;
-      width: 30px;
-      height: 20px;
-      transform: rotateX(0deg);
-      border-radius: 20px 5px;
-      background-color: rgba(255, 255, 255, 0.5);
-      content: '';
-    }
-    
-    &:after {
-      position: absolute;
-      top: 13px;
-      left: 5px;
-      display: block;
-      width: 30px;
-      height: 20px;
-      transform: rotateX(-170deg);
-      border-radius: 20px 5px;
-      background-color:rgba(255, 255, 255, 0.5);
-      content: '';
-    }
-  }
-  
-  @keyframes Wing1 {
-    0% {
-      transform: rotateY(60deg);
-    }
-    50% {
-      transform: rotateY(0deg);
-    }
-    100% {
-      transform: rotateY(60deg);
-    }
-  }
-  
-  @keyframes Wing2 {
-    0% {
-      transform: rotate(180deg) rotateY(60deg);
-    }
-    50% {
-      transform: rotate(180deg) rotateY(0deg);
-    }
-    100% {
-      transform: rotate(180deg) rotateY(60deg);
-    }
-  }
-  
-  @keyframes Body {
-    0% {
-      transform: translate(random(200), random(200));
-    }
-    20% {
-      transform: translate(random(200), random(200));
-    }
-    40% {
-      transform: translate(random(200), random(200));
-    }
-    60% {
-      transform: translate(random(200), random(200));
-    }
-    80% {
-      transform: translate(random(200), random(200));
-    }
-    100% {
-      transform: translate(random(200), random(200));
-    }
-  }
-
+}
