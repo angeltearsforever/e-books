@@ -35,28 +35,41 @@
 
 	
 	<main>
-		
-		
-		<div>
-
-1 of 0
-
-</div>
-
-	</main>
-<aside>
-	<div>
-		<div>
-			<h3>LATEST POSTS</h3>
+	<div class="butterfly-wrapper">
+		<div class="canvas">
+			<div class="butterfly" id="butterfly">
+			<div class="butterfly-wing-1"></div>
+			<div class="butterfly-body"></div>
+			<div class="butterfly-wing-2"></div>
 		</div>
-		<div>
-			<ul>
-				
-			</ul>
+		<div class="butterfly" id="butterfly">
+			<div class="butterfly-wing-1"></div>
+			<div class="butterfly-body"></div>
+			<div class="butterfly-wing-2"></div>
+			</div>
 		</div>
 	</div>
-</aside>
+	</main>
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+			var butterflies = document.querySelectorAll('.butterfly');
+			function getRandomArbitrary(min, max) {
+				return Math.random() * (max - min) + min;
+			}
+			function animateButterfly(butterfly, interval) {
+				setInterval(function() {
+					var numberX = Math.floor(getRandomArbitrary(0, window.innerWidth));
+					var numberY = Math.floor(getRandomArbitrary(0, window.innerHeight));
+					
+					butterfly.style.setProperty('--random-y', numberY +'px');
+					butterfly.style.setProperty('--random-x', numberX +'px');
+				}, interval);
+			}
 
+			animateButterfly(butterflies[0], 9000);
+			animateButterfly(butterflies[1], 13000);
+		})
+	</script>
 
 	<footer>
 </footer>
