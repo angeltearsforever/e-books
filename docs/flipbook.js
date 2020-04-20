@@ -124,7 +124,7 @@ window.addEventListener('DOMContentLoaded', function() {
             controls.style.top = 'unset';
         }
     }
-    const onResizeLeading = function() {
+    const onResizeHandler = function() {
         document.querySelector('.flipbook-wrapper').style.display = 'none';
         document.querySelector('.angel').style.display = 'none';
         document.querySelector('.controls-container').style.display = 'none';
@@ -185,19 +185,9 @@ window.addEventListener('DOMContentLoaded', function() {
     bindMouseEvents();
     
     // Bind Resize Events
-    if (window.innerWidth < 1000 && window.onorientationchange) {
-        window.addEventListener('orientationchange', function() {
-            onResizeLeading();
-            initFlipBook(currentPage);
-        });
-    } else {
-        window.addEventListener('resize', _.debounce(function() {
-            //Hide FlipBook
-            onResizeLeading();
-        }, 125, {leading: true, trailing: false}));
-        window.addEventListener('resize', _.debounce(function() {
-            //Destroy and restart flipbook
-            initFlipBook(currentPage);
-        }, 125, {leading: false, trailing: true}));
-    }
+    window.addEventListener('resize', function() {
+        //Hide FlipBook
+        onResizeHandler();
+        initFlipBook(currentPage);
+    });
 })
