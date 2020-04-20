@@ -4,3 +4,6 @@ title = "Angel Tears"
 theme = "blank"
 publishDir = "docs"
 canonifyURLs=true
+[permalinks]
+    post = "/:filename/"
+    code = "/:filename/"
