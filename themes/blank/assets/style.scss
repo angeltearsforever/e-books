@@ -163,14 +163,14 @@ img {
   background-repeat: no-repeat;
 }
 .front-cover {
-  background-image: url('../angeltears/images/qzinefrontcover.jpg');
+  background-image: url('../images/qzinefrontcover.jpg');
   @media screen and (max-width: $desktop) {
-    background-image: url('../angeltears/images/qzinefrontcover-mobile.jpg');
+    background-image: url('../images/qzinefrontcover-mobile.jpg');
   }
   background-position: center;
 }
 .back-cover {
-  background-image: url('../angeltears/images/qzinebackcover.jpg')
+  background-image: url('../images/qzinebackcover.jpg')
 }
 .qzine-page.credits-wrapper {
   display: flex;
