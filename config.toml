@@ -1,4 +1,4 @@
-baseURL = "http://ezines.angeltearsforever.com"
+baseURL = "https://ezines.angeltearsforever.com"
 languageCode = "en-us"
 title = "Angel Tears"
 theme = "blank"
