@@ -131,7 +131,7 @@ img {
     padding-bottom: 4px;
   }
 }
-[page="5"] > div:last-child {
+.page-wrapper > div:last-child {
   z-index: 37!important;
 }
 .spotify-wrapper {
@@ -248,12 +248,22 @@ img {
   position: relative;
   background-color: black;
   z-index:3;
+  .underlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: black;
+  }
   iframe {
     overflow: hidden;
     position: absolute;
     height: 100%;
     left: 50%;
     top: 50%;
+    z-index: 3;
     transform: translate(-50%, -50%);
     background: none;
   }
@@ -265,9 +275,10 @@ img {
     top: 50%;
     transform: translate(-50%, -50%);
     transition: opacity 300ms;
-    background: black;
+    background-color: black;
     width: 100%;
     object-fit: contain;
+    z-index:3;
   }
 }
 .images-with-text {
