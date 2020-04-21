@@ -78,6 +78,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     const bindMouseEvents = function () {
         root.addEventListener("mousemove", e => {
+            document.querySelector('.angel').style.display = "block";
             if (e.pageX < window.qzine.singlePageWidth) {
                 body.classList.remove('right');
                 body.classList.add('left');
@@ -104,8 +105,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
         flipbook.style.height = window.qzine.flipBookHeight + 'px';
         flipbook.style.width = window.qzine.clientWidth + 'px';
-        let translateY = (window.innerHeight - window.qzine.flipBookHeight) / 2;
-        document.querySelector('.angel-tears').style.transform ='translateY('+ translateY + 'px' + ')';
         document.querySelectorAll('#flipbook .page').forEach(function(page) {
             page.style.height = window.qzine.flipBookHeight + 'px';
             page.style.width = window.qzine.clientWidth;
@@ -119,16 +118,11 @@ window.addEventListener('DOMContentLoaded', function() {
         })
         setImageHeights();
         controls.style.right = window.qzine.controlsOffset;
-        document.querySelector('.controls-container').style.width = window.qzine.singlePageWidth + 'px';
-        document.querySelector('.controls-container').style.left = window.qzine.singlePageWidth/2 + 'px';
         spotifywrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
         spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
-
         if (window.qzine.clientWidth < 500) {
             var spotifyWidth = '80px';
             spotifyiframe.style.width = spotifyWidth;
-            // hamburger style phone controls should be under zine
-            controls.style.top = window.qzine.flipBookHeight + translateY + 'px';
         } else {
             spotifyiframe.style.width = '300px';
             controls.style.top = 'unset';
