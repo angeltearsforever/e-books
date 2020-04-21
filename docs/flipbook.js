@@ -73,13 +73,13 @@ window.addEventListener('DOMContentLoaded', function() {
             if (e.pageX < window.qzine.singlePageWidth) {
                 body.classList.remove('right');
                 body.classList.add('left');
-                root.style.setProperty('--mouse-x', e.clientX - 25 + "px");
-                root.style.setProperty('--mouse-y', e.clientY - 45 + "px");
+                root.style.setProperty('--mouse-x', e.clientX - 20 + "px");
+                root.style.setProperty('--mouse-y', e.clientY - 43 + "px");
             } else {
                 body.classList.remove('left');
                 body.classList.add('right');
-                root.style.setProperty('--mouse-x', e.clientX - 55 + "px");
-                root.style.setProperty('--mouse-y', e.clientY - 45 + "px");
+                root.style.setProperty('--mouse-x', e.clientX - 49 + "px");
+                root.style.setProperty('--mouse-y', e.clientY - 40 + "px");
             }
         });
     }
