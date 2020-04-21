@@ -60,14 +60,13 @@ img {
 }
 .controls-container {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  height: 104px;
 }
 .controls {
   display: flex;
+  justify-content: space-between;
   z-index: 4!important;
   width: 100%;
   position: absolute;
@@ -76,25 +75,20 @@ img {
   span {
     margin-top: 3px;
   }
+  & > * {
+    display: flex;
+  }
+}
+.controls-container.first .controls {
+  justify-content: flex-end;
   & > *:first-child {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: flex-start;
+    display: none;
   }
+}
+.controls-container.last .controls {
+  justify-content: flex-start;
   & > *:last-child {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  &.first {
-    & > *:first-child {
-      display: none;
-    }
-  }
-  &.last {
-    & > *:last-child {
-      display: none;
-    }
+    display: none;
   }
 }
 .button {

@@ -41,19 +41,19 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
         $("#flipbook").bind("turning", function(event, page, view) {
-            const controls = document.querySelector('.controls');
+            const controlsContainer = document.querySelector('.controls-container');
             // Hide/show first last controls
             if (view.includes(1)) {
-                controls.classList.add('first');
-                controls.classList.remove('last');
+                controlsContainer.classList.add('first');
+                controlsContainer.classList.remove('last');
             } else if (view.includes(window.qzine.length)) {
-                controls.classList.add('last');
-                controls.classList.remove('first');
+                controlsContainer.classList.add('last');
+                controlsContainer.classList.remove('first');
             } else {
-                if (controls.classList.contains('first')) {
-                    controls.classList.remove('first');
-                } else if (controls.classList.contains('last')) {
-                    controls.classList.remove('last');
+                if (controlsContainer.classList.contains('first')) {
+                    controlsContainer.classList.remove('first');
+                } else if (controlsContainer.classList.contains('last')) {
+                    controlsContainer.classList.remove('last');
                 }
             }
             //Set Image Heights 
@@ -68,9 +68,11 @@ window.addEventListener('DOMContentLoaded', function() {
             }
 
             if (page == '1' || page == window.qzine.length) {
-                document.querySelector('.controls-container').style.zIndex = 0;
+                document.querySelector('.controls-container').style.width = window.qzine.singlePageWidth + 'px';
+                document.querySelector('.controls-container').style.left = window.qzine.singlePageWidth/2 + 'px';
             } else {
-                document.querySelector('.controls-container').style.zIndex = 4;
+                document.querySelector('.controls-container').style.width = '100%';
+                document.querySelector('.controls-container').style.left = 0;
             }
         });
     }
@@ -117,6 +119,8 @@ window.addEventListener('DOMContentLoaded', function() {
         })
         setImageHeights();
         controls.style.right = window.qzine.controlsOffset;
+        document.querySelector('.controls-container').style.width = window.qzine.singlePageWidth + 'px';
+        document.querySelector('.controls-container').style.left = window.qzine.singlePageWidth/2 + 'px';
         spotifywrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
         spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
 
