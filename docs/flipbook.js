@@ -66,6 +66,12 @@ window.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('.spotify-wrapper').style.opacity = 0;
                 document.querySelector('.spotify-wrapper').style.zIndex = -1;
             }
+
+            if (page == '1' || page == window.qzine.length) {
+                document.querySelector('.controls-container').style.zIndex = 0;
+            } else {
+                document.querySelector('.controls-container').style.zIndex = 4;
+            }
         });
     }
     const bindMouseEvents = function () {

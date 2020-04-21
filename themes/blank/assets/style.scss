@@ -64,10 +64,11 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 .controls {
   display: flex;
-  z-index: 4;
+  z-index: 4!important;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -129,7 +130,7 @@ img {
 .spotify-wrapper {
   opacity: 0;
   position: absolute;
-  z-index: 3;
+  z-index: -1;
   transform: translate(-50%, -50%);
 }
 .flipbook-wrapper, .angel-tears {
