@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function() {
             height: window.qzine.flipBookHeight,
             page: page,
             autoCenter: true,
-            duration: 500,
+            duration: 600,
         });
         window.qzine.length = $("#flipbook").turn("pages");
         bindFlipBookEvents();
