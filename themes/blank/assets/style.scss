@@ -65,7 +65,6 @@ img {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 64px;
   @media screen and (max-width: $tablet) {
     width: 100%!important;
     left: 0!important;
@@ -81,16 +80,8 @@ img {
   justify-content: space-between;
   z-index: 4!important;
   width: 100%;
-  position: absolute;
   left: 0;
   bottom: 0;
-  height: 94px;
-  @media screen and (max-width: $desktop) {
-    height: 64px;
-  }
-  span {
-    padding: 5px;
-  }
   & > * {
     display: flex;
   }
@@ -108,9 +99,12 @@ img {
   }
 }
 .button {
-  margin: 30px;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 3;
+  position: relative;
+  z-index: 3;
   border: 3px solid black;
-  height: 32px;
   padding: 4px;
   border-radius: 50px;
   background-color: $slimegreen;
@@ -122,6 +116,8 @@ img {
   justify-content: center;
   align-items: center;
   width: 32px;
+  height: 32px;
+  margin: 20px;
   @media screen and (max-width: $desktop) {
     margin: 10px;
   }
@@ -266,9 +262,12 @@ img {
     justify-content: stretch;
     align-items: stretch;
     text-align: left;
-    padding-left: 15px;
+    padding: 0 15px;
+    @media screen and (max-width: $desktop) {
+      padding: 0 10px;
+    }
     @media screen and (max-width: $tablet) {
-      padding-left: 7px;
+      padding: 0 7px;
     }
   }
   & > * {
@@ -284,6 +283,9 @@ img {
     padding-bottom: 15px;
     opacity: 0;
     z-index: 2;
+    @media screen and (max-width: $desktop) {
+      padding-bottom: 10px;
+    }
     @media screen and (max-width: $tablet) {
       padding-bottom: 7px;
     }
