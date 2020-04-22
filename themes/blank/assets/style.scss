@@ -265,7 +265,6 @@ img {
     top: 50%;
     z-index: 3;
     transform: translate(-50%, -50%);
-    background: none;
   }
   img {
     overflow: hidden;
@@ -278,7 +277,7 @@ img {
     background-color: black;
     width: 100%;
     object-fit: contain;
-    z-index:3;
+    z-index:2;
   }
 }
 .images-with-text {
