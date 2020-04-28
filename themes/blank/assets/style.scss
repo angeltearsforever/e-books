@@ -3,7 +3,6 @@
 $tablet: 500px;
 $desktop: 1000px;
 $white: #fff;
-$slimegreen: #64e673;
 
 .left .angel {
   transform: scaleX(-1);
@@ -107,7 +106,6 @@ img {
   border: 3px solid black;
   padding: 4px;
   border-radius: 50px;
-  background-color: $slimegreen;
   color: black;
   font-weight: 600;
   font-size: 25px;
@@ -165,16 +163,6 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.front-cover {
-  background-image: url('../images/qzinefrontcover.jpg');
-  @media screen and (max-width: $desktop) {
-    background-image: url('../images/qzinefrontcover-mobile.jpg');
-  }
-  background-position: center;
-}
-.back-cover {
-  background-image: url('../images/qzinebackcover.jpg')
-}
 .qzine-page.credits-wrapper {
   display: flex;
   align-items: center;
@@ -192,7 +180,6 @@ img {
   }
 }
 .qzine-page {
-  background-color: $slimegreen;
   h1, h2, h3, h4, h5, h6, p {
     font-family: 'Open Sans';
     color: $white;
@@ -225,7 +212,7 @@ img {
   align-items: center;
   flex-direction: column;
   p {
-    padding: 50px;
+    padding: 0 50px;
   }
 }
 .video-embed-wrapper {
@@ -291,7 +278,43 @@ img {
     }
   }
 }
-
+.full-page-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    padding: 0 50px;
+    line-height: 2.5;
+  }
+}
+.full-page-image {
+  height: 100%;
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+.left-aligned-text {
+  p {
+    text-align: left;
+  }
+}
+.image-centered {
+  height: calc(100% - 86px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+    width: 100%;
+  }
+}
 
 //butterfly bois
 
@@ -467,5 +490,3 @@ img {
     transform: translate(random(200), random(200));
   }
 }
-
-

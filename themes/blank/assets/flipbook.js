@@ -59,6 +59,7 @@ window.addEventListener('DOMContentLoaded', function() {
             //Set Image Heights 
             setImageHeights();
             //Hide/show Spotify
+            console.log(page);
             if (page == '2' || page == '3') {
                 document.querySelector('.spotify-wrapper').style.opacity = 1;
                 document.querySelector('.spotify-wrapper').style.zIndex = 3;

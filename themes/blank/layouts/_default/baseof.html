@@ -13,6 +13,9 @@
 	{{ $menuSass := resources.Get "menu.scss" }}
 	{{ $menu := $menuSass | resources.ToCSS (dict "outputStyle" "compressed")}}
 	<link rel="stylesheet" href="{{$menu.Permalink}}">
+	{{ $skinsSass := resources.Get "skins.scss" }}
+	{{ $skins := $skinsSass | resources.ToCSS (dict "outputStyle" "compressed")}}
+	<link rel="stylesheet" href="{{$skins.Permalink}}">
 	<script>
 		window.lazySizesConfig = window.lazySizesConfig || {};
 		window.lazySizesConfig.customMedia = {

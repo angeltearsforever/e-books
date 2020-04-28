@@ -1,0 +1,49 @@
+---
+title: "Example"
+date: 2020-04-17T09:57:47-07:00
+draft: true
+---
+
+
+<!-- Video with caption -->
+<div class="qzine-page video-caption">
+    <p>caption</p>
+</div>
+<div class="qzine-page video-embed-wrapper">
+    <div class="video-embed">
+        <div class="overlay"></div>
+        <iframe style="background-image: url()" class="" src="?background=1&autoplay=1" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- Images -->
+<div class="qzine-page">
+    <div class="images-with-text">
+        <div>
+            <picture>
+                <source
+                    data-srcset="../images/image-mobile.jpg"
+                    media="--tablet" />
+                <source
+                    data-srcset="../images/image.jpg"/>
+                <img data-src="../images/image.jpg" id="image" class="lazyload"/>
+            </picture>
+            <p>Caption</p>
+        </div>
+    </div>
+</div>
+<div class="qzine-page">
+    <div class="images-with-text">
+        <div>
+            <picture>
+                <source
+                    data-srcset="../images/image-mobile.jpg"
+                    media="--tablet" />
+                <source
+                    data-srcset="../images/image.jpg"/>
+                <img data-src="../images/image.jpg" id="image" class="lazyload"/>
+            </picture>
+            <p>Caption</p>
+        </div>
+    </div>
+</div>

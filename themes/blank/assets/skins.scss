@@ -1,0 +1,124 @@
+//Skins
+$slimegreen: #64e673;
+$flopink: #FF48B0;
+$flopinklink: #811649;
+$tablet: 500px;
+$desktop: 1000px;
+$controlsHeight: 86px;
+
+.blue-moon {
+    .button {
+        background-color: $slimegreen;
+    }
+
+    .qzine-page {
+        background-color: $slimegreen;
+    }
+    .front-cover {
+        background-position: center;
+        background-image: url('../images/qzinefrontcover.jpg');
+    @media screen and (max-width: $desktop) {
+        background-image: url('../images/qzinefrontcover-mobile.jpg');
+    }
+    }
+    .back-cover {
+        background-image: url('../images/qzinebackcover.jpg')
+    }
+}
+
+.earth-angel {
+    .p9 img {
+        object-position: right;
+    }
+    .p13 iframe {
+        width: 130%!important;
+    }
+    .p26 img {
+        object-position: 60%;
+    }
+    .p27 img {
+        object-position: 70%;
+    }
+    .p29 iframe {
+        width: 89%!important;
+    }
+    .p34 iframe {
+        width: 138%!important;
+        left: 55%;
+    }
+    .p35 iframe {
+        width: 90%!important;
+    }
+    .p37 img {
+        object-fit: fill;
+    }
+    .p42, .p43 {
+        iframe {
+            width: 250%;
+        }
+    }
+    .p42 iframe {
+        left: 69%;
+        margin-top: -.5%;
+    }
+    .p48 img {
+        object-position: right;
+    }
+    .p49 img {
+        object-position: left;
+    }
+    a {
+        color: $flopinklink;
+    }
+    .button {
+        background-color: $flopink;
+    }
+
+    .qzine-page {
+        background-color: $flopink;
+    }
+    .front-cover {
+        background-position: right;
+        background-image: url('../images/earth-angel/coverforearthangel.jpg');
+        @media screen and (max-width: $desktop) {
+            // background-image: url('../images/earth-angel/qzinefrontcover-mobile.jpg');
+        }
+    }
+    .back-cover {
+        background-image: url('../images/earth-angel/backcoverforearthangel.jpg')
+    }
+    .dedication {
+        justify-content: center;
+    }
+    .dedication-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-end;
+        padding-top: calc(#{$controlsHeight} + 10px);
+        padding-bottom: calc(#{$controlsHeight} + 10px);
+        @media screen and (max-width: $desktop) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    .dedication-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex: 0 0 33%;
+        & > * {
+            padding: 10px 0;
+        }
+    }
+    .dedication-image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex: 0 0 33%;
+    }
+    .pearljam-quote {
+        width: 30%;
+    }
+}
