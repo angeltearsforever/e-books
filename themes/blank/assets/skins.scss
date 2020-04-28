@@ -33,6 +33,15 @@ $controlsHeight: 86px;
     .p13 iframe {
         width: 130%!important;
     }
+    .p24 img {
+        object-position: right;
+    }
+    .p24, .p25 {
+        picture {
+            max-height: 65%;
+            overflow: hidden;
+        }
+    }
     .p26 img {
         object-position: 60%;
     }
@@ -43,29 +52,43 @@ $controlsHeight: 86px;
         width: 89%!important;
     }
     .p34 iframe {
-        width: 138%!important;
-        left: 55%;
+        width: 120%!important;
+        left: 56%!important;
     }
     .p35 iframe {
-        width: 90%!important;
+        width: 160%!important;
+        height: 200%;
     }
     .p37 img {
         object-fit: fill;
     }
+    .p40 iframe {
+        width: 120%!important;
+        left: 56%!important;
+    }
+    .p41 iframe {
+        width: 300% !important;
+        height: 90% !important;
+    }
     .p42, .p43 {
         iframe {
-            width: 250%;
+            width: 350%!important;
+            height: 170%!important;
+            left: 40%;
         }
     }
     .p42 iframe {
         left: 69%;
-        margin-top: -.5%;
     }
     .p48 img {
         object-position: right;
     }
     .p49 img {
         object-position: left;
+    }
+    .p46 iframe {
+        width: 120%!important;
+        left: 56%!important;
     }
     a {
         color: $flopinklink;
