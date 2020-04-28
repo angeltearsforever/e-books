@@ -1,4 +1,5 @@
 $slimegreen: #64e673;
+$flopink: #FF48B0;
 .menu {
     z-index: 2;
     h1 {
@@ -12,12 +13,19 @@ $slimegreen: #64e673;
     a {
         cursor: none;
     }
-}
-.blue-moon {
-    color: $slimegreen;
-    font-size: 24px;
-    &:visited, &:active {
+    .blue-moon {
         color: $slimegreen;
+        font-size: 24px;
+        &:visited, &:active {
+            color: $slimegreen;
+        }
+    }
+    .earth-angel {
+        color: $flopink;
+        font-size: 24px;
+        &:visited, &:active {
+            color: $flopink;
+        }
     }
 }
 .home {
