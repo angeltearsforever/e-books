@@ -6,4 +6,3 @@ publishDir = "docs"
 canonifyURLs=true
 [permalinks]
     post = "/:filename/"
-    code = "/:filename/"

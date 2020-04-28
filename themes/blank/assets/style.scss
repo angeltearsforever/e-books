@@ -262,7 +262,7 @@ img {
     justify-content: stretch;
     align-items: stretch;
     text-align: left;
-    padding: 0 15px;
+    padding: 0 20px;
     @media screen and (max-width: $desktop) {
       padding: 0 10px;
     }
@@ -308,8 +308,11 @@ img {
 
 .butterfly-wrapper {
   position: absolute;
-  width: 100vw;
-  height: 200vh;
+  width: 110vw;
+  height: 110vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .canvas {
@@ -323,7 +326,7 @@ img {
   width: 4px;
   height: 25px;
   border-radius: 10px;
-  background-color:rgba(255, 255, 255, 0.5);
+  background-color:rgba(255, 255, 255, 0.6);
   
   &:before {
     position: absolute;
@@ -331,7 +334,7 @@ img {
     left: -1px;
     width: 1px;
     height: 6px;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.6);
     transform: rotate(-25deg);
     content: '';
   }
@@ -342,7 +345,7 @@ img {
     left: 4px;
     width: 1px;
     height: 6px;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.6);
     transform: rotate(25deg);
     content: '';
   }
@@ -369,7 +372,7 @@ img {
     height: 20px;
     transform: rotateX(0deg);
     border-radius: 20px 5px;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.6);
     content: '';
   }
   
@@ -382,7 +385,7 @@ img {
     height: 20px;
     transform: rotateX(-170deg);
     border-radius: 20px 5px;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.6);
     content: '';
   }
 }
@@ -402,7 +405,7 @@ img {
     height: 20px;
     transform: rotateX(0deg);
     border-radius: 20px 5px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     content: '';
   }
   
@@ -415,7 +418,7 @@ img {
     height: 20px;
     transform: rotateX(-170deg);
     border-radius: 20px 5px;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.6);
     content: '';
   }
 }

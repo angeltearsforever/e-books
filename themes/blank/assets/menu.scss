@@ -1,0 +1,37 @@
+$slimegreen: #64e673;
+.menu {
+    z-index: 2;
+    h1 {
+        text-decoration: underline;
+        color: white;
+        font-size: 16px;
+    }
+    ol, li {
+        z-index: 2;
+    }
+    a {
+        cursor: none;
+    }
+}
+.blue-moon {
+    color: $slimegreen;
+    font-size: 24px;
+    &:visited, &:active {
+        color: $slimegreen;
+    }
+}
+.home {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+    color: white;
+    z-index:2;
+    font-family: 'Open Sans';
+}
+.home .angel {
+    display: block!important;
+}
