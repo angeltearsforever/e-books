@@ -286,6 +286,9 @@ img {
   p {
     padding: 0 50px;
     line-height: 2.5;
+    @media screen and (max-width: $tablet) {
+      padding: 0 20px;
+    }
   }
 }
 .full-page-image {
