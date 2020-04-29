@@ -195,7 +195,7 @@ img {
     margin: 0;
     color: black;
     @media screen and (max-width: $tablet) {
-      font-size: 8px;
+      font-size: 7px;
     }
   }
 }
@@ -286,6 +286,9 @@ img {
   p {
     padding: 0 50px;
     line-height: 2.5;
+    @media screen and (max-width: $desktop) {
+      padding: 0 45px;
+    }
     @media screen and (max-width: $tablet) {
       padding: 0 20px;
       line-height: 2.2;

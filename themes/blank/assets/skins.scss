@@ -27,11 +27,6 @@ $controlsHeight: 86px;
 }
 
 .earth-angel {
-    p {
-        @media screen and (max-width: $tablet) {
-            font-size: 7px;
-        }
-    }
     .p9 img {
         object-position: right;
     }
@@ -132,11 +127,11 @@ $controlsHeight: 86px;
         padding-right: 10px;
         @media screen and (max-width: $desktop) {
             padding-top: 10px;
-            padding-bottom: 60px;
+            padding-bottom: 65px;
         }
         @media screen and (max-width: $tablet) {
             padding-top: 10px;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
     }
     .dedication-content {
@@ -146,10 +141,10 @@ $controlsHeight: 86px;
         flex-direction: column;
         flex: 1 0 33%;
         @media screen and (max-width: $desktop) {
-            flex: 0 0 70%;
+            flex: 0 0 75%;
         }
         @media screen and (max-width: $tablet) {
-            flex: 0 0 80%;
+            flex: 0 0 85%;
         }
         & > * {
             padding: 10px 0;
