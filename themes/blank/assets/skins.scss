@@ -64,6 +64,9 @@ $controlsHeight: 86px;
         width: 160%!important;
         height: 200%;
     }
+    .p36 iframe {
+        width: 100%;
+    }
     .p37 img {
         object-fit: fill;
     }
@@ -73,7 +76,7 @@ $controlsHeight: 86px;
     }
     .p41 iframe {
         width: 300% !important;
-        height: 90% !important;
+        height: 80% !important;
     }
     .p42, .p43 {
         iframe {
@@ -125,9 +128,15 @@ $controlsHeight: 86px;
         justify-content: flex-end;
         padding-top: calc(#{$controlsHeight} + 10px);
         padding-bottom: calc(#{$controlsHeight} + 10px);
+        padding-left: 10px;
+        padding-right: 10px;
         @media screen and (max-width: $desktop) {
             padding-top: 10px;
-            padding-bottom: 10px;
+            padding-bottom: 60px;
+        }
+        @media screen and (max-width: $tablet) {
+            padding-top: 10px;
+            padding-bottom: 20px;
         }
     }
     .dedication-content {
@@ -136,8 +145,17 @@ $controlsHeight: 86px;
         align-items: center;
         flex-direction: column;
         flex: 1 0 33%;
+        @media screen and (max-width: $desktop) {
+            flex: 0 0 70%;
+        }
+        @media screen and (max-width: $tablet) {
+            flex: 0 0 80%;
+        }
         & > * {
             padding: 10px 0;
+            @media screen and (max-width: $tablet) {
+                padding-bottom: 5px;
+            }
         }
     }
     .dedication-image-wrapper {
@@ -148,5 +166,8 @@ $controlsHeight: 86px;
     }
     .pearljam-quote {
         width: 30%;
+        @media screen and (max-width: $desktop) {
+            width: 50%;
+        }
     }
 }
