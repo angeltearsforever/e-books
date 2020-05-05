@@ -1,5 +1,6 @@
 $slimegreen: #64e673;
 $flopink: #FF48B0;
+$turq: #4dd3fa;
 .menu {
     z-index: 2;
     h1 {
@@ -25,6 +26,13 @@ $flopink: #FF48B0;
         font-size: 24px;
         &:visited, &:active {
             color: $flopink;
+        }
+    }
+    .this-is-my-heaven {
+        color: $turq;
+        font-size: 24px;
+        &:visited, &:active {
+            color: $turq;
         }
     }
 }
