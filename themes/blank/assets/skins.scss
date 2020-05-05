@@ -202,15 +202,26 @@ $controlsHeight: 86px;
             max-width: 100%;
         }
     }
+    .p11, .p13, .p19 {
+        iframe {
+            width: 100%!important;
+        }
+    }
     .p16 {
         iframe {
-            width: 90%;
+            width: 134% !important;
             left: 54%;
+        }
+    }
+    .p17 {
+        iframe {
+            width: 100%!important;
         }
     }
     .p33 {
         iframe {
-            width: 120%;
+            width: 150% !important;
+            left: 55%;
         }
     }
     .p37 {
@@ -224,27 +235,28 @@ $controlsHeight: 86px;
             }
             iframe {
                 height: 250%;
-                width: 150%;
+                width: 150%!important;
             }
         }
     }
     .p43 {
         iframe {
-            width: 170%;
+            width: 250% !important;
             left: 60%;
+            height: 110%;
         }
     }
     .p47 {
         iframe {
-            width: 160%;
+            width: 200%!important;
             left: 60%;
             top: 47%;
         }
     }
     .p49 {
         iframe {
-            width: 120%;
-            left: 57%;
+            width: 150% !important;
+            left: 60%;
         }
     }
 }
