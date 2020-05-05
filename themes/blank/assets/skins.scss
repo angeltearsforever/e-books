@@ -2,6 +2,8 @@
 $slimegreen: #64e673;
 $flopink: #FF48B0;
 $flopinklink: #811649;
+$turq: #4dd3fa;
+$turqlink: #1F607F;
 $tablet: 500px;
 $desktop: 1000px;
 $controlsHeight: 86px;
@@ -163,6 +165,86 @@ $controlsHeight: 86px;
         width: 30%;
         @media screen and (max-width: $desktop) {
             width: 50%;
+        }
+    }
+}
+
+.this-is-my-heaven {
+    a {
+        color: $turqlink;
+    }
+    p {
+        line-height: 2.2;
+        @media screen and (max-width: $desktop) {
+            line-height: 1.6;
+        }
+    }
+    .button {
+        background-color: $turq;
+    }
+
+    .qzine-page {
+        background-color: $turq;
+    }
+    .front-cover {
+        background-position: left;
+        background-image: url('../images/heaven/qzinefrontcover.jpg');
+    @media screen and (max-width: $desktop) {
+        background-image: url('../images/heaven/qzinefrontcover-mobile.jpg');
+    }
+    }
+    .back-cover {
+        background-image: url('../images/heaven/qzinebackcover.jpg');
+        background-position: right;
+    }
+    .images-with-text {
+        img {
+            max-width: 100%;
+        }
+    }
+    .p16 {
+        iframe {
+            width: 90%;
+            left: 54%;
+        }
+    }
+    .p33 {
+        iframe {
+            width: 120%;
+        }
+    }
+    .p37 {
+        .full-page-image-and-video {
+            picture {
+                height: 55%;
+            }
+            img {
+                object-fit: cover;
+                object-position: top;
+            }
+            iframe {
+                height: 250%;
+                width: 150%;
+            }
+        }
+    }
+    .p43 {
+        iframe {
+            width: 170%;
+            left: 60%;
+        }
+    }
+    .p47 {
+        iframe {
+            width: 160%;
+            left: 60%;
+            top: 47%;
+        }
+    }
+    .p49 {
+        iframe {
+            width: 120%;
+            left: 57%;
         }
     }
 }
