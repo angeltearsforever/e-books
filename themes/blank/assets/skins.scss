@@ -202,12 +202,10 @@ $controlsHeight: 86px;
             max-width: 100%;
         }
     }
-    .p11, .p13, .p17, .p19 {
-        iframe {
-            width: 100%!important;
-        }
+    iframe {
+        width: 100%!important;
     }
-    .p16 {
+    .p18 {
         iframe {
             width: 134% !important;
             left: 54%;
@@ -219,19 +217,22 @@ $controlsHeight: 86px;
             left: 55%;
         }
     }
-    .p37 {
-        .full-page-image-and-video {
-            picture {
-                height: 55%;
-            }
-            img {
-                object-fit: cover;
-                object-position: top;
-            }
-            iframe {
-                height: 250%;
-                width: 150%!important;
-            }
+    .full-width-image-center {
+        img {
+            height: 100%;
+        }
+    }
+    .full-page-image-and-video {
+        picture {
+            height: 55%;
+        }
+        img {
+            object-fit: cover;
+            object-position: top;
+        }
+        iframe {
+            height: 250%;
+            width: 150%!important;
         }
     }
     .p43 {
