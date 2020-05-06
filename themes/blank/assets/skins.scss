@@ -185,6 +185,9 @@ $controlsHeight: 86px;
 
     .qzine-page {
         background-color: $turq;
+        iframe {
+            width: 100%!important;
+        }
     }
     .front-cover {
         background-position: left;
@@ -201,9 +204,6 @@ $controlsHeight: 86px;
         img {
             max-width: 100%;
         }
-    }
-    iframe {
-        width: 100%!important;
     }
     .p7 {
         img {
