@@ -205,6 +205,11 @@ $controlsHeight: 86px;
     iframe {
         width: 100%!important;
     }
+    .p7 {
+        img {
+            object-fit: contain;
+        }
+    }
     .p18 {
         iframe {
             width: 134% !important;
@@ -215,11 +220,6 @@ $controlsHeight: 86px;
         iframe {
             width: 150% !important;
             left: 55%;
-        }
-    }
-    .full-width-image-center {
-        img {
-            height: 100%;
         }
     }
     .full-page-image-and-video {
