@@ -256,3 +256,15 @@ $controlsHeight: 86px;
         }
     }
 }
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) {
+    .this-is-my-heaven {
+        .full-page-image-and-video {
+            iframe {
+                top: 25%;
+                left: 55%;
+            }
+        }
+    }
+  }
+}
