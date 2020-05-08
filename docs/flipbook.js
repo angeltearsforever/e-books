@@ -97,6 +97,15 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.images-with-text img').forEach(function(img) {
             img.style.height = (window.qzine.flipBookHeight * .7) + 'px';
         })
+        document.querySelectorAll('.top-aligned-video-wrapper iframe').forEach(function(vid) {
+            // vid.style.height = (window.qzine.flipBookHeight * .7) + 'px';
+            let height = vid.getAttribute('height');
+            let width = vid.getAttribute('width');
+            let newHeight = window.qzine.flipBookHeight * .7;
+            vid.style.height = newHeight + 'px';
+            let ratio = newHeight/height;
+            vid.style.width = width * ratio + 'px';
+        })
     }
     const setFlipBookDimensions = function() {
         var flipbook = document.querySelector('#flipbook');
@@ -123,10 +132,13 @@ window.addEventListener('DOMContentLoaded', function() {
         spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
         if (window.qzine.clientWidth < 500) {
             var spotifyWidth = '80px';
-            spotifyiframe.style.width = spotifyWidth;
+            if (spotifyiframe) {
+                spotifyiframe.style.width = spotifyWidth;
+            }
         } else {
-            spotifyiframe.style.width = '300px';
-            controls.style.top = 'unset';
+            if (spotifyiframe) {
+                spotifyiframe.style.width = '300px';
+            }
         }
     }
     const onResizeHandler = function() {

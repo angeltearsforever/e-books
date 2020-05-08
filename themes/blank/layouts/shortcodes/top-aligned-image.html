@@ -1,0 +1,14 @@
+<div class="qzine-page">
+    <div class="images-with-text">
+        <picture>
+            {{ if .Get "mobileImg"}}
+            <source data-srcset="../images/{{.Get "mobileImg"}}" media="--tablet" />
+            {{end}}
+            <source data-srcset="../images/{{.Get "img"}}" />
+            <img data-src="../images/{{.Get "img"}}" id="5shadowboyR" class="lazyload"/>
+        </picture>
+        {{ if .Get "text"}}
+        <p>{{.Get "text"}}</p>
+        {{end}}
+    </div>
+</div>

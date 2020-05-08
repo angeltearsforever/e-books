@@ -267,14 +267,14 @@ img {
   img {
     width: 100%;
     object-fit: cover;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
     opacity: 0;
     z-index: 2;
     @media screen and (max-width: $desktop) {
-      padding-bottom: 10px;
+      margin-bottom: 10px;
     }
     @media screen and (max-width: $tablet) {
-      padding-bottom: 7px;
+      margin-bottom: 7px;
     }
   }
 }
@@ -574,5 +574,18 @@ img {
   }
   100% {
     transform: translate(random(200), random(200));
+  }
+}
+
+.top-aligned-video {
+  width: 100%;
+  .top-aligned-video-wrapper {
+    width: 100%;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
   }
 }

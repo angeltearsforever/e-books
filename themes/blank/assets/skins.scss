@@ -4,6 +4,7 @@ $flopink: #FF48B0;
 $flopinklink: #811649;
 $turq: #4dd3fa;
 $turqlink: #1F607F;
+$peach: #f4764f;
 $tablet: 500px;
 $desktop: 1000px;
 $controlsHeight: 86px;
@@ -192,9 +193,9 @@ $controlsHeight: 86px;
     .front-cover {
         background-position: left;
         background-image: url('../images/heaven/qzinefrontcover.jpg');
-    @media screen and (max-width: $desktop) {
-        background-image: url('../images/heaven/qzinefrontcover-mobile.jpg');
-    }
+        @media screen and (max-width: $desktop) {
+            background-image: url('../images/heaven/qzinefrontcover-mobile.jpg');
+        }
     }
     .back-cover {
         background-image: url('../images/heaven/qzinebackcover.jpg');
@@ -216,12 +217,6 @@ $controlsHeight: 86px;
             left: 54%;
         }
     }
-    // .p19 {
-    //     background:black;
-    //     .video-embed {
-    //         height: 60%;
-    //     }
-    // }
     .p33 {
         iframe {
             width: 150% !important;
@@ -273,4 +268,24 @@ $controlsHeight: 86px;
         }
     }
   }
+}
+
+.put-your-hand-in-the-hand {
+    .qzine-page {
+        background-color: $peach;
+    }
+    .button {
+        background-color: $peach;
+    }
+    .front-cover {
+        background-position: center;
+        background-image: url('../images/hands/qzinefrontcover.jpg');
+        @media screen and (max-width: $desktop) {
+            background-image: url('../images/hands/qzinefrontcover-mobile.jpg');
+        }
+    }
+    .back-cover {
+        background-image: url('../images/hands/qzinebackcover.jpg');
+        background-position: right;
+    }
 }
