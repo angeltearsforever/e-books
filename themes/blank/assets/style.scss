@@ -600,21 +600,24 @@ img {
 .recipe-wrapper .recipe {
   display: flex;
   flex-direction: column;
-  height: 85%;
+  height: 81%;
   justify-content: space-between;
 }
 .qzine-page .recipe {
-  padding: 2rem;
+  padding:2vw;
   h1 {
     color: black;
     text-align: left;
-    font-size: 13px;
+    font-size: 1vw;
     font-weight: 500;
     font-style: italic;
+    @media screen and (max-width: $desktop) {
+      font-size: 1.3vh;
+    }
   }
   h2 {
     text-align: left;
-    font-size: 11px;
+    font-size: 1.3vh;
     color: black;
     font-weight: 500;
     font-style: italic;
@@ -624,14 +627,29 @@ img {
     text-align: left;
     color: black;
     list-style: none;
-    font-size: 11px;
+    font-size: 1.3vh;
     line-height: 1.4;
+    @media screen and (max-width: $desktop) {
+      padding: 0 .5rem;
+    }
   }
   p {
     text-align: left;
     margin: 1rem 0;
+    font-size: 1.3vh;
+    @media screen and (max-width: $desktop) {
+      margin: .25rem 0;
+    }
   }
   .byline {
     font-style: italic;
+  }
+}
+.recipe-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 1.3vh;
   }
 }
