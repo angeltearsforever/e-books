@@ -289,7 +289,7 @@ $controlsHeight: 86px;
         background-color: $peach;
     }
     .front-cover {
-        background-position: center;
+        background-position: 70%;
         background-image: url('../images/hands/qzinefrontcover.jpg');
         @media screen and (max-width: $desktop) {
             background-image: url('../images/hands/qzinefrontcover-mobile.jpg');
@@ -307,6 +307,11 @@ $controlsHeight: 86px;
     .chocolate-cake {
         .recipe {
             height: 70%;
+        }
+    }
+    .p35 {
+        iframe {
+            transform: translateX(-15%);
         }
     }
 }

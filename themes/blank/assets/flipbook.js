@@ -183,7 +183,7 @@ window.addEventListener('DOMContentLoaded', function() {
     // DO STUFF
     ////////////////////////
     //declare global variables
-    var currentPage = 61;
+    var currentPage = 1;
     const body = document.querySelector('body');
     const root = document.documentElement;
     //Initialize FlipBook
