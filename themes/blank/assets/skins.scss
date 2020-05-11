@@ -271,6 +271,17 @@ $controlsHeight: 86px;
 }
 
 .put-your-hand-in-the-hand {
+    a {
+        color: darken($peach, 30)
+    }
+    .dedication {
+        p {
+            margin: .25rem 14rem;
+            &:last-child {
+                margin-top: 1rem;
+            }
+        }
+    }
     .qzine-page {
         background-color: $peach;
     }
@@ -287,5 +298,15 @@ $controlsHeight: 86px;
     .back-cover {
         background-image: url('../images/hands/qzinebackcover.jpg');
         background-position: right;
+    }
+    .white-bean, .chickpea {
+        .recipe {
+            height: 60%;
+        }
+    }
+    .chocolate-cake {
+        .recipe {
+            height: 70%;
+        }
     }
 }
