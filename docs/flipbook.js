@@ -129,13 +129,15 @@ window.addEventListener('DOMContentLoaded', function() {
         setImageHeights();
         controls.style.right = window.qzine.controlsOffset;
         spotifywrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
-        spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
         if (window.qzine.clientWidth < 500) {
+            let angelTears = document.querySelector(".angel-tears");
+            spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + ((angelTears.parentElement.offsetHeight/2) - 32 ) + 'px';
             var spotifyWidth = '80px';
             if (spotifyiframe) {
                 spotifyiframe.style.width = spotifyWidth;
             }
         } else {
+            spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
             if (spotifyiframe) {
                 spotifyiframe.style.width = '300px';
             }

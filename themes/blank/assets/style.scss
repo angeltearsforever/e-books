@@ -137,7 +137,7 @@ img {
 }
 .angel-tears {
   @media screen and (max-width: $tablet) {
-    margin-top: calc(50% - 32px);
+    padding-top: calc(50% - 32px);
   }
 }
 .flipbook-wrapper, .controls-container {
