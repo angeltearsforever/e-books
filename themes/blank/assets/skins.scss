@@ -280,6 +280,12 @@ $controlsHeight: 86px;
             &:last-child {
                 margin-top: 1rem;
             }
+            @media screen and (max-width: $desktop) {
+                margin: .25rem 2rem;
+                &:last-child {
+                    margin-top: 1rem;
+                }
+            }
         }
     }
     .qzine-page {
@@ -299,19 +305,23 @@ $controlsHeight: 86px;
         background-image: url('../images/hands/qzinebackcover.jpg');
         background-position: right;
     }
-    .white-bean, .chickpea {
-        .recipe {
-            height: 60%;
-        }
-    }
-    .chocolate-cake {
-        .recipe {
-            height: 70%;
-        }
-    }
     .p35 {
         iframe {
             transform: translateX(-15%);
+        }
+    }
+    .chickpea .process {
+        margin-top: 0;
+    }
+    .chocolate-cake {
+        @media screen and (min-width: $tablet) {
+            h1 {
+                height: 20vh;
+                line-height: 20vh;
+            }
+            .process {
+                margin-top: 20vh;
+            }
         }
     }
 }

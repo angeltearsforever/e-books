@@ -597,48 +597,98 @@ img {
   align-items: center;
   justify-content: center;
 }
+.recipe-wrapper h1 {
+  height: 4vh;
+  line-height: 4vh;
+  @media screen and (min-width: $tablet) {
+    height: 14vh;
+    line-height: 14vh;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 17vh;
+    line-height: 17vh;
+  }
+}
 .recipe-wrapper .recipe {
   display: flex;
   flex-direction: column;
   height: 81%;
-  justify-content: space-between;
 }
 .qzine-page .recipe {
-  padding:2vw;
+  @media screen and (max-width: $desktop) {
+    padding:2.5vw 3vw;
+  }
+  @media screen and (min-width: $tablet) {
+    padding:2vw 5vw;
+  }
+  @media screen and (min-width: $desktop) {
+    padding:5vw 7vw;
+  }
   h1 {
+    margin: 0;
+    vertical-align: middle;
     color: black;
     text-align: left;
-    font-size: 1vw;
+    font-size: 1.9vh;
     font-weight: 500;
     font-style: italic;
     @media screen and (max-width: $desktop) {
-      font-size: 1.3vh;
+      font-size: 2.2vh;
+    }
+    @media screen and (max-width: $tablet) {
+      font-size: .7vh;
+    }
+  }
+  .process {
+    margin-top: 0vh;
+    @media screen and (min-width: $tablet) {
+      margin-top: 14vh;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-top: 17vh;
     }
   }
   h2 {
+    margin-top: 0;
+    margin-bottom: 0;
     text-align: left;
-    font-size: 1.3vh;
+    font-size: 12px;
     color: black;
     font-weight: 500;
     font-style: italic;
     text-decoration: underline;
+    @media screen and (max-width: $desktop) {
+      font-size: 2vh;
+    }
+    @media screen and (max-width: $tablet) {
+      font-size: .7vh;
+    }
   }
   ul {
     text-align: left;
     color: black;
     list-style: none;
-    font-size: 1.3vh;
+    font-size: 12px;
     line-height: 1.4;
     @media screen and (max-width: $desktop) {
       padding: 0 .5rem;
+      font-size: 2vh;
+      @media screen and (max-width: $tablet) {
+        font-size: .7vh;
+        margin: .25vh 0 0 .25vh;
+      }
     }
   }
   p {
     text-align: left;
     margin: 1rem 0;
-    font-size: 1.3vh;
+    font-size:12px;
     @media screen and (max-width: $desktop) {
       margin: .25rem 0;
+      font-size: 2vh;
+    }
+    @media screen and (max-width: $tablet) {
+      font-size: .7vh;
     }
   }
   .byline {
@@ -650,6 +700,20 @@ img {
   justify-content: center;
   align-items: center;
   p {
-    font-size: 1.3vh;
+    font-size: 12px;
+    @media screen and (max-width: $desktop) {
+      font-size: 2vh;
+    }
+    @media screen and (max-width: $tablet) {
+      font-size: .7vh;
+    }
+  }
+}
+.recipe-wrapper.white-bean {
+  h1 {
+    height: auto;
+  }
+  .process {
+    margin-top: 3vh;
   }
 }
