@@ -1,6 +1,7 @@
 $slimegreen: #64e673;
 $flopink: #FF48B0;
 $turq: #4dd3fa;
+$peach: #f4764f;
 .menu {
     z-index: 2;
     h1 {
@@ -33,6 +34,13 @@ $turq: #4dd3fa;
         font-size: 24px;
         &:visited, &:active {
             color: $turq;
+        }
+    }
+    .hands {
+        color: $peach;
+        font-size: 24px;
+        &:visited, &:active {
+            color: $peach;
         }
     }
 }

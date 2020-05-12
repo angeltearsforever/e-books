@@ -280,7 +280,16 @@ $controlsHeight: 86px;
             &:last-child {
                 margin-top: 1rem;
             }
+            font-size: 12px;
             @media screen and (max-width: $desktop) {
+                font-size: 9px;
+                margin: .25rem 5.5rem;
+                &:last-child {
+                    margin-top: 1rem;
+                }
+            }
+            @media screen and (max-width: $tablet) {
+                font-size: 7px;
                 margin: .25rem 2rem;
                 &:last-child {
                     margin-top: 1rem;
