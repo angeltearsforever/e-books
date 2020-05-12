@@ -604,10 +604,6 @@ img {
     height: 14vh;
     line-height: 14vh;
   }
-  @media screen and (min-width: $desktop) {
-    height: 17vh;
-    line-height: 17vh;
-  }
 }
 .recipe-wrapper .recipe {
   display: flex;
@@ -622,7 +618,7 @@ img {
     padding:2vw 5vw;
   }
   @media screen and (min-width: $desktop) {
-    padding:5vw 8vw;
+    padding:4vw 8vw;
   }
   h1 {
     margin: 0;
@@ -643,9 +639,6 @@ img {
     margin-top: 0vh;
     @media screen and (min-width: $tablet) {
       margin-top: 14vh;
-    }
-    @media screen and (min-width: $desktop) {
-      margin-top: 17vh;
     }
   }
   h2 {
