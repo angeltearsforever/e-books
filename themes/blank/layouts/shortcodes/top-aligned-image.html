@@ -5,7 +5,7 @@
             <source data-srcset="../images/{{.Get "mobileImg"}}" media="--tablet" />
             {{end}}
             <source data-srcset="../images/{{.Get "img"}}" />
-            <img data-src="../images/{{.Get "img"}}" id="5shadowboyR" class="lazyload"/>
+            <img data-src="../images/{{.Get "img"}}" class="lazyload"/>
         </picture>
         {{ if .Get "text"}}
         <p>{{.Get "text"}}</p>

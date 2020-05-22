@@ -185,7 +185,6 @@ img {
 .qzine-page {
   h1, h2, h3, h4, h5, h6, p, ul {
     font-family: 'Open Sans';
-    color: $white;
     line-height: 1.4em;
     text-align: center;
     letter-spacing: .05rem;
@@ -709,4 +708,8 @@ img {
   .process {
     margin-top: 3vh;
   }
+}
+
+.indent {
+  margin-left: 50px;
 }

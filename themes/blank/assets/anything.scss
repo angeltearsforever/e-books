@@ -1,0 +1,85 @@
+$purp: #a790f1;
+$purpLink: #6456AB;
+
+.anything-thats-part-of-you {
+    a {
+        color: $purpLink;
+    }
+    .button {
+        background-color: $purp;
+    }
+
+    .qzine-page {
+        background-color: $purp;
+    }
+    .front-cover {
+        background-position: center;
+        background-image: url('../images/anything-thats-part-of-you/qzinefrontcover.jpg');
+    @media screen and (max-width: $desktop) {
+        background-image: url('../images/anything-thats-part-of-you/qzinefrontcover-mobile.jpg');
+    }
+    }
+    .back-cover {
+        background-image: url('../images/anything-thats-part-of-you/qzinebackcover.jpg')
+    }
+    /////
+    .qzine-page {
+        &.dream, &.mave {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & > * {
+                padding: 5px;
+                @media screen and (min-width: $tablet) {
+                    padding: 10px;
+                }
+                @media screen and (min-width: $desktop) {
+                    padding: 125px;
+                }
+            }
+        }
+    }
+    .qzine-page p {
+        text-align: left;
+        margin: 1px 0;
+        line-height: 1;
+        font-size: 6px;
+        @media screen and (min-width: $tablet) {
+            margin: 4px 0;
+            font-size: 10px;
+            line-height: 1.1;
+        }
+        @media screen and (min-width: $desktop) {
+            margin:15px 0;
+            line-height: 1.3;
+            font-size: 12px;
+        }
+    }
+    .qzine-page.dedication  {
+        & > * {
+            @media screen and (min-width: $tablet) {
+                margin-bottom: 40px;
+            }
+            padding: 5px;
+            @media screen and (min-width: $tablet) {
+                padding: 15px;
+            }
+        }
+        p {
+            text-align: left;
+            margin: 1px 0;
+            line-height: 1;
+            font-size: 6px;
+            @media screen and (min-width: $tablet) {
+                margin: 4px 0;
+                font-size: 10px;
+                line-height: 1.1;
+            }
+            @media screen and (min-width: $desktop) {
+                margin:15px 0;
+                line-height: 1.3;
+                font-size: 12px;
+            }
+        }
+    }
+}

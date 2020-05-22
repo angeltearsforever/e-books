@@ -9,6 +9,10 @@ $tablet: 500px;
 $desktop: 1000px;
 $controlsHeight: 86px;
 
+//Posts
+@import './anything.scss';
+
+//These should get separated into individual files per post
 .blue-moon {
     .button {
         background-color: $slimegreen;
