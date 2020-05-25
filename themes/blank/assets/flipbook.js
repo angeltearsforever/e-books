@@ -98,7 +98,6 @@ window.addEventListener('DOMContentLoaded', function() {
             img.style.height = (window.qzine.flipBookHeight * .7) + 'px';
         })
         document.querySelectorAll('.top-aligned-video-wrapper iframe').forEach(function(vid) {
-            // vid.style.height = (window.qzine.flipBookHeight * .7) + 'px';
             let height = vid.getAttribute('height');
             let width = vid.getAttribute('width');
             let newHeight = window.qzine.flipBookHeight * .7;

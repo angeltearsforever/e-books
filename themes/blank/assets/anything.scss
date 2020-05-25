@@ -1,5 +1,6 @@
 $purp: #a790f1;
 $purpLink: #6456AB;
+$screenWidth: 100vw;
 
 .anything-thats-part-of-you {
     a {
@@ -38,10 +39,14 @@ $purpLink: #6456AB;
                 }
             }
         }
+        &.dream {
+        }
+        &.mave {
+        }
     }
     .qzine-page p {
         text-align: left;
-        margin: 1px 0;
+        margin: 2px 0;
         line-height: 1;
         font-size: 6px;
         @media screen and (min-width: $tablet) {
@@ -81,5 +86,9 @@ $purpLink: #6456AB;
                 font-size: 12px;
             }
         }
+    }
+    .parenthood .top-aligned-video-wrapper iframe {
+        height: calc(#{$screenWidth}/2)!important;
+        width: 100%!important;
     }
 }
