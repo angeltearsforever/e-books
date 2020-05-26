@@ -97,13 +97,16 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.images-with-text img').forEach(function(img) {
             img.style.height = (window.qzine.flipBookHeight * .7) + 'px';
         })
-        document.querySelectorAll('.top-aligned-video-wrapper iframe').forEach(function(vid) {
-            let height = vid.getAttribute('height');
-            let width = vid.getAttribute('width');
+        document.querySelectorAll('.top-aligned-video-wrapper').forEach(function(vid) {
+            let iframe = vid.querySelector('iframe');
+            let height = iframe.getAttribute('height');
+            let width = iframe.getAttribute('width');
             let newHeight = window.qzine.flipBookHeight * .7;
             vid.style.height = newHeight + 'px';
+            iframe.style.height = newHeight + 'px';
             let ratio = newHeight/height;
-            vid.style.width = width * ratio + 'px';
+            let newWidth = width * ratio + 'px';
+            iframe.style.flex = '0 0 ' + newWidth;
         })
     }
     const setFlipBookDimensions = function() {

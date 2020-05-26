@@ -713,3 +713,15 @@ img {
 .indent {
   margin-left: 50px;
 }
+////////////////
+// Components
+////////////////
+.top-aligned-video-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    iframe {
+        
+    }
+}

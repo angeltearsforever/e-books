@@ -32,16 +32,46 @@ $screenWidth: 100vw;
             & > * {
                 padding: 5px;
                 @media screen and (min-width: $tablet) {
-                    padding: 10px;
+                    padding: 20px 20px 66px 20px;
                 }
                 @media screen and (min-width: $desktop) {
                     padding: 125px;
                 }
             }
         }
-        &.dream {
+        &.p10, &.p11 {
+            iframe {
+                flex: 1 0 270%!important;
+                height: 200%!important;
+            }
         }
-        &.mave {
+        &.p16 iframe {
+            flex: 1 0 210%!important;
+            height: 170%!important;
+        }
+        &.p17 iframe {
+            flex: 1 0 170%!important;
+            height: 150%!important;
+        }
+        &.p22 iframe {
+            flex: 1 0 170%!important;
+            height: 150%!important;
+        }
+        &.p23 iframe {
+            flex: 1 0 160%!important;
+            height: 150%!important;
+        }
+        &.p29 iframe {
+            flex: 1 0 185%!important;
+            height: 150%!important;
+        }
+        &.p34 iframe {
+            flex: 1 0 190%!important;
+            height: 150%!important;
+        }
+        &.p35 iframe {
+            flex: 1 0 210%!important;
+            height: 160%!important;
         }
     }
     .qzine-page p {
@@ -50,9 +80,9 @@ $screenWidth: 100vw;
         line-height: 1;
         font-size: 6px;
         @media screen and (min-width: $tablet) {
-            margin: 4px 0;
+            margin: 5px 0;
             font-size: 10px;
-            line-height: 1.1;
+            line-height: 1.2;
         }
         @media screen and (min-width: $desktop) {
             margin:15px 0;
@@ -87,8 +117,11 @@ $screenWidth: 100vw;
             }
         }
     }
-    .parenthood .top-aligned-video-wrapper iframe {
-        height: calc(#{$screenWidth}/2)!important;
-        width: 100%!important;
-    }
+    .parenthood .top-aligned-video-wrapper {
+        display: block;
+        iframe {
+            height: calc(#{$screenWidth}/2)!important;
+            width: 100%!important;
+        }
+    } 
 }
