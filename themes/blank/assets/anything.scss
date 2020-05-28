@@ -42,11 +42,6 @@ $screenWidth: 100vw;
                 }
             }
         }
-        &.p5 {
-            .top-aligned-video-wrapper {
-                overflow: visible;
-            }
-        }
         &.p10, &.p11 {
             iframe {
                 flex: 0 0 270%!important;
