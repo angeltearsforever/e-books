@@ -3,6 +3,9 @@ $purpLink: #6456AB;
 $screenWidth: 100vw;
 
 .anything-thats-part-of-you {
+    .front-cover {
+        background-position: top!important;
+    }
     a {
         color: $purpLink;
     }
