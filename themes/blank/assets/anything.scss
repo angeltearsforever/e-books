@@ -42,38 +42,43 @@ $screenWidth: 100vw;
                 }
             }
         }
+        &.p5 {
+            .top-aligned-video-wrapper {
+                overflow: visible;
+            }
+        }
         &.p10, &.p11 {
             iframe {
-                flex: 1 0 270%!important;
-                height: 200%!important;
+                flex: 0 0 270%!important;
+                height: 185%!important;
             }
         }
         &.p16 iframe {
-            flex: 1 0 210%!important;
+            flex: 0 0 205%!important;
             height: 170%!important;
         }
         &.p17 iframe {
-            flex: 1 0 170%!important;
-            height: 150%!important;
+            flex: 0 0 170%!important;
+            height: 120%!important;
         }
         &.p22 iframe {
-            flex: 1 0 170%!important;
+            flex: 0 0 170%!important;
             height: 150%!important;
         }
         &.p23 iframe {
-            flex: 1 0 160%!important;
+            flex: 0 0 160%!important;
             height: 150%!important;
         }
         &.p29 iframe {
-            flex: 1 0 185%!important;
+            flex: 0 0 185%!important;
             height: 150%!important;
         }
         &.p34 iframe {
-            flex: 1 0 190%!important;
+            flex: 0 0 200%!important;
             height: 150%!important;
         }
         &.p35 iframe {
-            flex: 1 0 210%!important;
+            flex: 0 0 210%!important;
             height: 160%!important;
         }
     }

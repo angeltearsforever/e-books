@@ -97,16 +97,31 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.images-with-text img').forEach(function(img) {
             img.style.height = (window.qzine.flipBookHeight * .7) + 'px';
         })
-        document.querySelectorAll('.top-aligned-video-wrapper').forEach(function(vid) {
-            let iframe = vid.querySelector('iframe');
-            let height = iframe.getAttribute('height');
-            let width = iframe.getAttribute('width');
-            let newHeight = window.qzine.flipBookHeight * .7;
-            vid.style.height = newHeight + 'px';
-            iframe.style.height = newHeight + 'px';
-            let ratio = newHeight/height;
-            let newWidth = width * ratio + 'px';
-            iframe.style.flex = '0 0 ' + newWidth;
+        document.querySelectorAll('.top-aligned-video-wrapper').forEach(function(videoWrapper) {
+            //Make sure iframe covers available space (70% of height of zine contianer) and maintains aspect ratio
+            let iframe = videoWrapper.querySelector('iframe');
+            let iframeHeight = iframe.getAttribute('height');
+            let iframeWidth = iframe.getAttribute('width');
+            let heightOfAreaToFill = window.qzine.flipBookHeight * .7;
+            let widthOfAreaToFill = window.qzine.singlePageWidth;
+
+            videoWrapper.style.height = heightOfAreaToFill + 'px';
+
+            //Try full height, overflowed @ width first
+            let heightRatio = heightOfAreaToFill/iframeHeight;
+            let newWidth = iframeWidth * heightRatio;
+
+            if (newWidth >= widthOfAreaToFill) {
+                //Video fills height, overflows width
+                iframe.style.height = heightOfAreaToFill + 'px';
+                iframe.style.flex = '0 0 ' + newWidth + 'px';
+            } else {
+                //Video fills width, overflows height
+                let widthRatio = widthOfAreaToFill/iframeWidth;
+                let newHeight = iframeHeight * widthRatio;
+                iframe.style.flex = '0 0 ' + widthOfAreaToFill + 'px';
+                iframe.style.height = newHeight + 'px';
+            }
         })
     }
     const setFlipBookDimensions = function() {
