@@ -1,0 +1,74 @@
+$slowyellow: #ffcf04;
+$slowyellowLink: darken($slowyellow, 10%);
+$slowgreen: #3fbf8b;
+$slowpurp: #3f1295;
+
+.slowly-as-i-leave-you {
+    a {
+        color: $slowyellowLink;
+    }
+    .button {
+        background-color: $slowyellow;
+    }
+
+    .qzine-page {
+        background-color: $slowyellow;
+    }
+    .front-cover {
+        background-position: center;
+        background-image: url('../images/slowly/qzinefrontcover.jpg');
+    @media screen and (max-width: $desktop) {
+        background-image: url('../images/slowly/qzinefrontcover-mobile.jpg');
+    }
+    }
+    .back-cover {
+        background-image: url('../images/slowly/qzinebackcover.jpg')
+    }
+    .dedication-text {
+        padding: 10%;
+        p {
+            text-align: left;
+            margin: .75rem 0;
+            line-height: 1.4;
+            @media screen and (max-width: $desktop) {
+                margin: .5rem 0;
+                font-size: 9px;
+            }
+            @media screen and (max-width: $tablet) {
+                margin: .2rem 0;
+                font-size: 5px;
+            }
+        }
+        br {
+            @media screen and (max-width: $desktop) {
+                display: none;
+            }
+        }
+        .emoji {
+            font-size: 4rem;
+            @media screen and (max-width: $desktop) {
+                font-size: .5rem;
+            }
+        }
+    }
+    .section-2, .section-5 {
+        background-color: $slowgreen;
+    }
+    .section-3, .section-6 {
+        background-color: $slowpurp;
+    }
+    .section-4, .section-7 {
+        background-color: $slowyellow;
+    }
+    .text-left {
+        padding: 30% 20%;
+        @media screen and (max-width: $desktop) {
+            padding: 15% 10%;
+        }
+        @media screen and (max-width: $tablet) {
+            padding: 5%;
+        }
+        line-height: 1.2;
+        font-size: 11px;
+    }
+}

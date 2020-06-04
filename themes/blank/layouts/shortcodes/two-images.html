@@ -1,0 +1,18 @@
+<div class="qzine-page {{ if (.Get "class")}}{{.Get "class"}}{{end}}">
+    <div class="two-images">
+        <picture>
+            {{ if .Get "mobileImg1"}}
+            <source data-srcset="../images/{{.Get "mobileImg1"}}" media="--tablet" />
+            {{end}}
+            <source data-srcset="../images/{{.Get "img1"}}" />
+            <img data-src="../images/{{.Get "img1"}}" class="lazyload"/>
+        </picture>
+        <picture>
+            {{ if .Get "mobileImg2"}}
+            <source data-srcset="../images/{{.Get "mobileImg2"}}" media="--tablet" />
+            {{end}}
+            <source data-srcset="../images/{{.Get "img2"}}" />
+            <img data-src="../images/{{.Get "img2"}}" class="lazyload"/>
+        </picture>
+    </div>
+</div>

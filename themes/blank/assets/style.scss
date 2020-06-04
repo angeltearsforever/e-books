@@ -725,7 +725,26 @@ img {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    iframe {
-        
-    }
+}
+.text-centered-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-left, .text-centered {
+  padding: 5%;
+}
+.text-centered {
+  text-align: center;
+}
+.text-left p {
+  text-align: left;
+}
+.two-images {
+  display: flex;
+  flex-direction: column;
+  & > * {
+    flex: 1 1 50%;
+    width: 100%;
+  }
 }
