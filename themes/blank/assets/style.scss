@@ -309,6 +309,15 @@ img {
     width: 100%;
   }
 }
+.full-page-image-right {
+  height: 100%;
+  img {
+    object-fit: cover;
+    object-position: right bottom;
+    height: 100%;
+    width: 100%;
+  }
+}
 .full-page-stacked-images {
   display: flex;
   flex-direction: column;
