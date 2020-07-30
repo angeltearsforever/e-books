@@ -5,14 +5,14 @@
             <source data-srcset="../images/{{.Get "mobileImg1"}}" media="--tablet" />
             {{end}}
             <source data-srcset="../images/{{.Get "img1"}}" />
-            <img data-src="../images/{{.Get "img1"}}" class="lazyload"/>
+            <img data-src="../images/{{.Get "img1"}}" class="lazyload" style="height: 50%"/>
         </picture>
         <picture>
             {{ if .Get "mobileImg2"}}
             <source data-srcset="../images/{{.Get "mobileImg2"}}" media="--tablet" />
             {{end}}
             <source data-srcset="../images/{{.Get "img2"}}" />
-            <img data-src="../images/{{.Get "img2"}}" class="lazyload"/>
+            <img data-src="../images/{{.Get "img2"}}" class="lazyload" style="height: 50%"/>
         </picture>
     </div>
 </div>

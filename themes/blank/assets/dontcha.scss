@@ -1,0 +1,160 @@
+$dontchagray: #627286;
+$dontchagrayLink: darken($dontchagray, 50%);
+
+.dontcha-think-its-time {
+    a {
+        color: $dontchagrayLink;
+    }
+
+	/* mouse over link */
+	a:hover {
+	  color: hotpink;
+	}
+
+    .button {
+        background-color: $dontchagray;
+    }
+	
+    .qzine-page {
+    	background-color: $dontchagray;
+
+    	ul {
+	    	font-size: 11px;
+		    margin: 0;
+		    color: black;
+    	}
+    }
+
+
+    .front-cover {
+        background-position: center;
+        background-image: url('/../images/dontcha-think-its-time/donchathinkitstimecover-horizontal.jpg');
+    @media screen and (max-width: $desktop) {
+        background-image: url('/../images/dontcha-think-its-time/donchathinkitstimecover-horizontal.jpg');
+    }
+
+    }
+    .back-cover {
+        background-image: url('/../images/dontcha-think-its-time/donchathinkitstimebackcover.jpg');
+        background-position: right;
+    }
+
+    .dedication-text {
+        padding: 10%;
+        p {
+            text-align: left;
+            margin: .75rem 0;
+            line-height: 1.4;
+            @media screen and (max-width: $desktop) {
+                margin: .5rem 0;
+                font-size: 9px;
+            }
+            @media screen and (max-width: $tablet) {
+                margin: .2rem 0;
+                font-size: 5px;
+            }
+        }
+        br {
+            @media screen and (max-width: $desktop) {
+                display: none;
+            }
+        }
+        .emoji {
+            font-size: 4rem;
+            @media screen and (max-width: $desktop) {
+                font-size: .5rem;
+            }
+        } 
+    }
+
+    .dialogue-text {
+        p {
+            line-height: 2.2;
+            @media screen and (max-width: $desktop) {
+                font-size: 9px;
+            }
+            @media screen and (max-width: $tablet) {
+                font-size: 5px;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    .resources-wrapper {
+		display:flex;
+	  	align-items: center;
+	  	justify-content: center;
+    }
+    .resources {
+		@media screen and (max-width: $desktop) {
+		padding:2.5vw 3vw;
+		}
+		@media screen and (min-width: $tablet) {
+		padding:2vw 5vw;
+		}
+		@media screen and (min-width: $desktop) {
+		padding:4vw 8vw;
+		}
+		h1 {
+		margin: 0;
+		vertical-align: middle;
+		color: black;
+		text-align: left;
+		font-size: 1.9vh;
+		font-weight: 500;
+		font-style: italic;
+		padding: 0 .5 rem;
+		@media screen and (max-width: $desktop) {
+		  font-size: 2.2vh;
+		}
+		@media screen and (max-width: $tablet) {
+		  font-size: .7vh;
+		}
+		}
+		.process {
+		margin-top: 0vh;
+		@media screen and (min-width: $tablet) {
+		  margin-top: 14vh;
+		}
+		}
+		h2 {
+		margin: 0;
+		vertical-align: middle;
+		text-align: left;
+		font-size: 14px;
+		color: black;
+		font-weight: 500;
+		@media screen and (max-width: $desktop) {
+		  font-size: 2vh;
+		}
+		@media screen and (max-width: $tablet) {
+		  font-size: .7vh;
+		}
+		}
+
+		ul {
+		text-align: left;
+		color: black;
+		list-style: none;
+		font-size: 12px;
+		line-height: 1.4;
+		@media screen and (max-width: $desktop) {
+		  padding: 0 .5rem;
+		  font-size: 2vh;
+		  @media screen and (max-width: $tablet) {
+		    font-size: .7vh;
+		    margin: .25vh 0 0 .25vh;
+		  }
+		}
+		}
+	}
+}
+
+.resource-section {
+	margin-top: 7px;
+	margin-bottom: 40px;
+}
+
+.right-align-wrapper {
+	text-align:right;
+}
