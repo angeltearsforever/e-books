@@ -17,6 +17,10 @@ $noBigThingBlueColor: #00a7ef;
     .text-left {
       p {
         margin-bottom: 2em;
+
+        &.center {
+          text-align: center;
+        }
       }
     }
   }
