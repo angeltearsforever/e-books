@@ -1,0 +1,47 @@
+$noBigThingMintColor: #00FF9C;
+$noBigThingYellowColor: #f9de29;
+$noBigThingBlueColor: #00a7ef;
+
+.it-aint-no-big-thing {
+  .qzine-page {
+    background-color: $noBigThingMintColor;
+
+    &.yellow {
+      background-color: $noBigThingYellowColor;
+    }
+
+    &.blue {
+      background-color: $noBigThingBlueColor;
+    }
+
+    .text-left {
+      p {
+        margin-bottom: 2em;
+
+        &.center {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .front-cover {
+    background-position: left;
+    background-image: url('/../images/it-aint-no-big-thing/frontcover.jpg');
+  }
+
+  .dedication {
+    p.left {
+      text-align: left;
+
+      .indent {
+        display: block;
+      }
+    }
+  }
+
+  .back-cover {
+    background-position: center;
+    background-image: url('/../images/it-aint-no-big-thing/backcover.jpg');
+  }
+}
