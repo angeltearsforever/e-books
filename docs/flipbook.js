@@ -60,22 +60,25 @@ window.addEventListener('DOMContentLoaded', function() {
             setImageHeights();
             //Hide/show Spotify
             console.log(page);
-            if (page == '2' || page == '3') {
-                document.querySelector('.spotify-wrapper').style.opacity = 1;
-                document.querySelector('.spotify-wrapper').style.zIndex = 3;
-            } else {
-                document.querySelector('.spotify-wrapper').style.opacity = 0;
-                document.querySelector('.spotify-wrapper').style.zIndex = -1;
-            }
 
-            // Hack: This zine shows the playlists on page 6 and 30 instead. We let the normal logic
-            // run and then override the per-zine logic here. Would be best to make this more scalable...
-            if (page == '6' || page == '30') {
-                document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.opacity = 1;
-                document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.zIndex = 3;
+            if (document.querySelector('.it-aint-no-big-thing') != null) {
+                // Hack: This zine shows the playlists on page 6 and 30 instead. Instead of letting the normal logic
+                // run, we override the per-zine logic here. Would be best to make this more scalable...
+                if (page == '6' || page == '30') {
+                    document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.opacity = 1;
+                    document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.zIndex = 3;
+                } else {
+                    document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.opacity = 0;
+                    document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.zIndex = -1;
+                }
             } else {
-                document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.opacity = 0;
-                document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.zIndex = -1;
+                if (page == '2' || page == '3') {
+                    document.querySelector('.spotify-wrapper').style.opacity = 1;
+                    document.querySelector('.spotify-wrapper').style.zIndex = 3;
+                } else {
+                    document.querySelector('.spotify-wrapper').style.opacity = 0;
+                    document.querySelector('.spotify-wrapper').style.zIndex = -1;
+                }
             }
 
             if (page == '1' || page == window.qzine.length) {
