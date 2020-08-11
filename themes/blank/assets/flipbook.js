@@ -68,6 +68,16 @@ window.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('.spotify-wrapper').style.zIndex = -1;
             }
 
+            // Hack: This zine shows the playlists on page 6 and 30 instead. We let the normal logic
+            // run and then override the per-zine logic here. Would be best to make this more scalable...
+            if (page == '6' || page == '30') {
+                document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.opacity = 1;
+                document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.zIndex = 3;
+            } else {
+                document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.opacity = 0;
+                document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.zIndex = -1;
+            }
+
             if (page == '1' || page == window.qzine.length) {
                 document.querySelector('.controls-container').style.width = window.qzine.singlePageWidth + 'px';
                 document.querySelector('.controls-container').style.left = window.qzine.singlePageWidth/2 + 'px';
