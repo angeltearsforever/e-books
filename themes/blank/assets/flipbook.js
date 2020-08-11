@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', function() {
             if (document.querySelector('.it-aint-no-big-thing') != null) {
                 // Hack: This zine shows the playlists on page 6 and 30 instead. Instead of letting the normal logic
                 // run, we override the per-zine logic here. Would be best to make this more scalable...
-                if (page == '6' || page == '30') {
+                if (page == '6') {
                     document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.opacity = 1;
                     document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.zIndex = 3;
                 } else {
