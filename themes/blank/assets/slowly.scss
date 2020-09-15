@@ -54,14 +54,14 @@ $slowpurp: #3f1295;
     }
     .full-page-image-and-video {
         picture {
-            height: 55%;
+            height: 50%;
         }
         img {
             object-fit: cover;
             object-position: top;
         }
         iframe {
-            height: 250%;
+            height: 150%;
             width: 150%!important;
         }
     }
