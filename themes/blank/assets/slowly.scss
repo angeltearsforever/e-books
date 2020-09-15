@@ -69,6 +69,12 @@ $slowpurp: #3f1295;
         background-color: $slowgreen;
         p {
             font-size: 25px;
+                @media screen and (max-width: $desktop) {
+                font-size: 15px;
+            }
+            @media screen and (max-width: $tablet) {
+                font-size: 10px;
+            }
         }
     }
     .section-3, .section-6 {
@@ -76,12 +82,26 @@ $slowpurp: #3f1295;
         p {
             font-size: 25px;
             color: white;
+            font-size: 25px;
+                @media screen and (max-width: $desktop) {
+                font-size: 15px;
+            }
+            @media screen and (max-width: $tablet) {
+                font-size: 10px;
+            }
         }
     }
     .section-4, .section-7 {
         background-color: $slowyellow;
         p {
             font-size: 25px;
+            font-size: 25px;
+                @media screen and (max-width: $desktop) {
+                font-size: 15px;
+            }
+            @media screen and (max-width: $tablet) {
+                font-size: 10px;
+            }
         }
     }
 
