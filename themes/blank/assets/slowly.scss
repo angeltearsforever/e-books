@@ -16,13 +16,14 @@ $slowpurp: #3f1295;
     }
     .front-cover {
         background-position: center;
-        background-image: url('../images/slowly-as-i-leave-you/slowlyasIleaveyoucover.jpg');
+        background-image: url('../images/slowly-as-i-leave-you/resizedfrontcoverslowly.jpg');
     @media screen and (max-width: $desktop) {
-        background-image: url('../images/slowly-as-i-leave-you/slowlyasIleaveyoucover.jpg');
+        background-image: url('../images/slowly-as-i-leave-you/resizedslowlycover.jpg');
     }
     }
     .back-cover {
-        background-image: url('../images/slowly-as-i-leave-you/slowlyasIleaveyoubackcover.jpg')
+        background-image: url('../images/slowly-as-i-leave-you/resizedbackcover.jpg');
+        background-position: center;
     }
     .dedication-text {
         padding: 10%;
@@ -51,7 +52,7 @@ $slowpurp: #3f1295;
             }
         }
     }
-    .section-2, .section-5 {
+    .section-2, .section-5, .section-8 {
         background-color: $slowgreen;
     }
     .section-3, .section-6 {

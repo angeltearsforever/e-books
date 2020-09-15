@@ -332,6 +332,20 @@ img {
   object-position: center;
   }
 }
+.full-page-stacked-images-btm {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  picture {
+    height: 50%;
+  }
+  img {
+    height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  }
+}
 .full-page-image-and-video {
   display: flex;
   flex-direction: column;
