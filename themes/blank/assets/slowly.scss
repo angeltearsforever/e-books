@@ -52,6 +52,19 @@ $slowpurp: #3f1295;
             }
         }
     }
+    .full-page-image-and-video {
+        picture {
+            height: 55%;
+        }
+        img {
+            object-fit: cover;
+            object-position: top;
+        }
+        iframe {
+            height: 250%;
+            width: 150%!important;
+        }
+    }
     .section-2, .section-5, .section-8 {
         background-color: $slowgreen;
     }
