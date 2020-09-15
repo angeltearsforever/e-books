@@ -18,7 +18,7 @@ $slowpurp: #3f1295;
         background-position: center;
         background-image: url('../images/slowly-as-i-leave-you/resizedfrontcoverslowly.jpg');
     @media screen and (max-width: $desktop) {
-        background-image: url('../images/slowly-as-i-leave-you/resizedslowlycover.jpg');
+        background-image: url('../images/slowly-as-i-leave-you/resizedfrontcoverslowly.jpg');
     }
     }
     .back-cover {
@@ -67,11 +67,25 @@ $slowpurp: #3f1295;
     }
     .section-2, .section-5, .section-8 {
         background-color: $slowgreen;
+        p {
+            font-size: 25px;
+        }
     }
     .section-3, .section-6 {
         background-color: $slowpurp;
+        p {
+            font-size: 25px;
+            color: white;
+        }
     }
     .section-4, .section-7 {
+        background-color: $slowyellow;
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .writing {
         background-color: $slowyellow;
     }
     .text-left {
