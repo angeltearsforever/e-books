@@ -1,0 +1,62 @@
+$sweetpink: #f9b6f0;
+$sweetpinkLink: darken($sweetpink, 30%);
+
+.i-hear-a-sweet-voice-calling {
+a {
+    color: $sweetpinkLink;
+}
+.button {
+    background-color: $sweetpink;
+}
+
+.qzine-page {
+    background-color: $sweetpink;
+}
+.front-cover {
+    background-position: 25% 25%;
+    background-image: url('../images/i-hear-a-sweet-voice-calling/hearasweetvoicecoverresized.jpg');
+@media screen and (max-width: $desktop) {
+    background-image: url('../images/i-hear-a-sweet-voice-calling/hearasweetvoicecoverresized.jpg');
+}
+}
+.back-cover {
+    background-image: url('../images/i-hear-a-sweet-voice-calling/textsbackcover.jpg');
+    background-position: center;
+}
+.dedication-text {
+        padding: 10%;
+        p {
+            text-align: left;
+            margin: .75rem 0;
+            line-height: 1.4;
+            @media screen and (max-width: $desktop) {
+                margin: .5rem 0;
+                font-size: 9px;
+            }
+            @media screen and (max-width: $tablet) {
+                margin: .2rem 0;
+                font-size: 5px;
+            }
+        }
+        br {
+            @media screen and (max-width: $desktop) {
+                display: none;
+            }
+        }
+        .emoji {
+            font-size: 4rem;
+            @media screen and (max-width: $desktop) {
+                font-size: .5rem;
+            }
+        }
+    }
+
+.dedication-images {
+
+	img {
+		width: 35%;
+
+		}
+	}
+
+}

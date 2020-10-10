@@ -15,6 +15,7 @@ $controlsHeight: 86px;
 @import './slowly.scss';
 @import './dontcha.scss';
 @import './bigthing.scss';
+@import './sweetvoice.scss';
 
 //These should get separated into individual files per post
 .blue-moon {
@@ -28,6 +29,7 @@ $controlsHeight: 86px;
     .front-cover {
         background-position: center;
         background-image: url('../images/qzinefrontcover.jpg');
+        float: left;
     @media screen and (max-width: $desktop) {
         background-image: url('../images/qzinefrontcover-mobile.jpg');
     }
