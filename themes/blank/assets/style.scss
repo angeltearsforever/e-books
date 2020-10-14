@@ -754,7 +754,7 @@ img {
   justify-content: center;
   align-items: center;
 }
-.text-left, .text-centered {
+.text-left, .text-centered, {
   padding: 5%;
 }
 .text-centered {
@@ -763,6 +763,7 @@ img {
 .text-left p {
   text-align: left;
 }
+
 .two-images {
   display: flex;
   flex-direction: column;
