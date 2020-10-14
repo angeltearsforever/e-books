@@ -26,6 +26,12 @@ a {
 }
 .dedication-text {
         padding: 10%;
+        	@media screen and (max-width: $desktop) {
+                padding-top: 3%;
+            }
+            @media screen and (max-width: $tablet) {
+                padding-top: 3%;
+            }
         p {
             text-align: left;
             margin: .75rem 0;
@@ -33,10 +39,12 @@ a {
             @media screen and (max-width: $desktop) {
                 margin: .5rem 0;
                 font-size: 9px;
+                letter-spacing: .02rem;
             }
             @media screen and (max-width: $tablet) {
                 margin: .2rem 0;
                 font-size: 5px;
+                letter-spacing: .02rem;
             }
         }
         br {
@@ -50,6 +58,12 @@ a {
 
 	img {
 		width: 35%;
+			@media screen and (max-width: $desktop) {
+		        width: 20%;
+		    }
+		    @media screen and (max-width: $tablet) {
+		        width: 20%;
+		    }
 		}
 	}
 
@@ -65,7 +79,7 @@ a {
 	margin-right: auto;
 	@media screen and (max-width: $desktop) {
         width:95%;
-        padding: 1%;
+        padding: 3%;
     }
     @media screen and (max-width: $tablet) {
         width:95%
