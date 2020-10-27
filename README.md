@@ -1,5 +1,7 @@
 # Angel Tears
 
+## Description
+
 E-zines for [Angel Tears](https://www.angeltearsforever.com/).
 
 ## Requirements
@@ -32,19 +34,19 @@ The `-d` option specifies the output directory to compile the static site to.
 
 ## Authoring
 
-TODO: How to create a new zine.
+To create a new zine from the default template, run:
+
+```
+$ hugo new content/name-of-your-zine.html
+```
 
 ## Deploying
 
 The e-zines are hosted on Github Pages at the [following repository](https://github.com/angeltearsforever/e-books).
 
-To deploy a new zine, first, ensure you and your zine are on the `master` branch.
+Note that deploying a new zine must occur on the master branch.
 
-```
-$ git checkout master
-```
-
-Next, when you are done with your zine, build the site:
+When you are done with your zine, build the site:
 
 ```
 $ hugo -d docs

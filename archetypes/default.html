@@ -1,0 +1,25 @@
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+---
+
+{{< angel-cursor >}}
+{{< controls >}}
+
+<div class="angel-tears {{ .Name }}">
+    <div class="spotify-wrapper">
+        <!-- ...iframe goes here... -->
+    </div>
+
+    <div class="flipbook-wrapper is-hidden">
+        <div id="flipbook">
+            <!-- Page 1 -->
+            <div class="hard cover front-cover">
+            </div>
+
+            <!-- Page 2 -->
+            <!-- ... -->
+        </div>
+    </div>
+</div>
