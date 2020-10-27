@@ -2,9 +2,19 @@
 
 E-zines for [Angel Tears](https://www.angeltearsforever.com/).
 
+## Requirements
+
+This site is built with [Hugo](https://gohugo.io/).
+
+To install Hugo on macOS, run:
+
+```
+$ brew install hugo
+```
+
 ## Building
 
-To preview the zines, run:
+After cloning this repository, to preview the zines, run:
 
 ```
 $ hugo server
