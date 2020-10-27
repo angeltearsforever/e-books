@@ -7,7 +7,9 @@ window.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('.controls-container').classList.remove('is-hidden');
                 document.querySelector('.angel').classList.remove('is-hidden');
                 document.querySelector('.spotify-wrapper').classList.remove('is-hidden');
-                document.querySelector('.mixcloud-wrapper').classList.remove('is-hidden');
+                if (document.querySelector('.mixcloud-wrapper')) {
+                    document.querySelector('.mixcloud-wrapper').classList.remove('is-hidden');
+                }
             } else if (counter > 9) {
                 alert(':( God should\'ve spent a little more time on this page.')
                 return;
@@ -77,14 +79,18 @@ window.addEventListener('DOMContentLoaded', function() {
                     document.querySelector('.spotify-wrapper').style.opacity = 1;
                     document.querySelector('.spotify-wrapper').style.zIndex = 3;
 
-                    document.querySelector('.mixcloud-wrapper').style.opacity = 1;
-                    document.querySelector('.mixcloud-wrapper').style.zIndex = 3;
+                    if (document.querySelector('.mixcloud-wrapper')) {
+                        document.querySelector('.mixcloud-wrapper').style.opacity = 1;
+                        document.querySelector('.mixcloud-wrapper').style.zIndex = 3;
+                    }
                 } else {
                     document.querySelector('.spotify-wrapper').style.opacity = 0;
                     document.querySelector('.spotify-wrapper').style.zIndex = -1;
 
-                    document.querySelector('.mixcloud-wrapper').style.opacity = 0;
-                    document.querySelector('.mixcloud-wrapper').style.zIndex = -1;
+                    if (document.querySelector('.mixcloud-wrapper')) {
+                        document.querySelector('.mixcloud-wrapper').style.opacity = 0;
+                        document.querySelector('.mixcloud-wrapper').style.zIndex = -1;
+                    }
                 }
             }
 
@@ -167,28 +173,41 @@ window.addEventListener('DOMContentLoaded', function() {
         })
         setImageHeights();
         controls.style.right = window.qzine.controlsOffset;
-        spotifywrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
-        mixcloudwrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
+        if (spotifywrapper) {
+            spotifywrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
+        }
+        if (mixcloudwrapper) {
+            mixcloudwrapper.style.left = (window.qzine.clientWidth / 4) + 'px';
+        }
         if (window.qzine.clientWidth < 500) {
             let angelTears = document.querySelector(".angel-tears");
-            spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + ((angelTears.parentElement.offsetHeight/2) - 32 ) + 'px';
+
+            if (spotifywrapper) {
+              spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + ((angelTears.parentElement.offsetHeight/2) - 32 ) + 'px';
+            }
             var spotifyWidth = '80px';
             if (spotifyiframe) {
                 spotifyiframe.style.width = spotifyWidth;
             }
 
-            mixcloudwrapper.style.top = (window.qzine.flipBookHeight / 2) + ((angelTears.parentElement.offsetHeight/2) - 32 ) + 'px';
+            if (mixcloudwrapper) {
+                mixcloudwrapper.style.top = (window.qzine.flipBookHeight / 2) + ((angelTears.parentElement.offsetHeight/2) - 32 ) + 'px';
+            }
             var mixcloudWidth = '80px';
             if (mixcloudiframe) {
                 mixcloudiframe.style.width = mixcloudWidth;
             }
         } else {
-            mixcloudwrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
-            if (mixcloudiframe) {
-                mixcloudiframe.style.width = '300px';
+            if (spotifywrapper) {
+                spotifywrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
+            }
+            if (spotifyiframe) {
+                spotifyiframe.style.width = '300px';
             }
 
-            mixcloudwrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
+            if (mixcloudwrapper) {
+                mixcloudwrapper.style.top = (window.qzine.flipBookHeight / 2) + 'px';
+            }
             if (mixcloudiframe) {
                 mixcloudiframe.style.width = '300px';
             }
@@ -201,7 +220,9 @@ window.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.flipbook-wrapper').classList.add('is-hidden');
         document.querySelector('.controls-container').classList.add('is-hidden');
         document.querySelector('.spotify-wrapper').classList.add('is-hidden');
-        document.querySelector('.mixcloud-wrapper').classList.add('is-hidden');
+        if (document.querySelector('.mixcloud-wrapper')) {
+            document.querySelector('.mixcloud-wrapper').classList.add('is-hidden');
+        }
         document.querySelector('.angel').classList.add('is-hidden');
         //move mouse to the middle again to prevent weird reflow
         root.style.setProperty('--mouse-x', '65%');

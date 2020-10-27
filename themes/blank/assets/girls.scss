@@ -1,0 +1,11 @@
+$girlsBgColor: #a2faf1;
+
+.girls-just-want-to-have-fun {
+  .qzine-page {
+    background-color: $girlsBgColor;
+
+  .front-cover {
+    background-position: left;
+    background-image: url('/../images/it-aint-no-big-thing/frontcover.jpg');
+  }
+}
