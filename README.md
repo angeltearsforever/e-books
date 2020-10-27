@@ -48,6 +48,12 @@ To include this in the styles bundle, edit `themes/blank/assets/skins.scss` and 
 @import './name-of-your-zine.scss';
 ```
 
+Finally, add a new link to the index in `themes/blank/layouts/index.html`:
+
+```
+<li><a href="/name-of-your-zine" class="hands">Name Of Your Zine</a></li>
+```
+
 ## Deploying
 
 The e-zines are hosted on Github Pages at the [following repository](https://github.com/angeltearsforever/e-books).
