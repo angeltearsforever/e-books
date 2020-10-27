@@ -40,6 +40,14 @@ To create a new zine from the default template, run:
 $ hugo new content/name-of-your-zine.html
 ```
 
+The associated style sheet must be created at: `themes/blank/assets/name-of-your-zine.scss`.
+
+To include this in the styles bundle, edit `themes/blank/assets/skins.scss` and add:
+
+```
+@import './name-of-your-zine.scss';
+```
+
 ## Deploying
 
 The e-zines are hosted on Github Pages at the [following repository](https://github.com/angeltearsforever/e-books).
