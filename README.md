@@ -62,4 +62,6 @@ $ git push
 
 Your zine should be viewable at the following base URL: [ezines.angeltearsforever.com](https://ezines.angeltearsforever.com/).
 
+Note that due to Github Pages caching rules it may take a few minutes for HTML/CSS/JS changes to update.
+
 Note that the `docs/CNAME` file in this repository controls DNS for Github Pages.
