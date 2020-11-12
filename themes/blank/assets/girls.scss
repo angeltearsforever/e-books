@@ -1,8 +1,12 @@
 $girlsBgColor: #a2faf1;
 
 .girls-just-want-to-have-fun {
+    .button {
+        background-color: $girlsBgColor;
+    }
     .qzine-page {
         background-color: $girlsBgColor;
+
 
         p.movies-header {
             text-align: center;
