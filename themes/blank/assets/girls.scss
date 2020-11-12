@@ -1,26 +1,52 @@
 $girlsBgColor: #a2faf1;
 
 .girls-just-want-to-have-fun {
-  .qzine-page {
-    background-color: $girlsBgColor;
-  }
+    .qzine-page {
+        background-color: $girlsBgColor;
 
-  .front-cover {
-    background-position: left;
-    background-image: url('/../images/girls-just-want-to-have-fun/frontcover.jpg');
-  }
+        @media screen and (max-width: $tablet) {
+            .dedication-text p {
+                font-size: 4px;
+            }
 
-  .back-cover {
-    background-position: left;
-    background-image: url('/../images/girls-just-want-to-have-fun/backcover.jpg');
-  }
+            .dedication-text br {
+                /* Nice to find a better way to collapse. */
+                display: none;
+            }
 
-  .dedication {
-    img {
-      width: 200px;
-      display: block;
-      margin: 0 auto;
-      margin-top: 1em;
+            .images-container {
+                text-align: center;
+
+                img {
+                    width: 50px;
+                    display: inline-block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            .text-left p {
+                font-size: 6px;
+            }
+        }
     }
-  }
+
+    .front-cover {
+        background-position: center;
+        background-image: url('/../images/girls-just-want-to-have-fun/frontcover.jpg');
+    }
+
+    .back-cover {
+        background-position: center;
+        background-image: url('/../images/girls-just-want-to-have-fun/backcover.jpg');
+    }
+
+    .dedication {
+        img {
+            width: 200px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 1em;
+        }
+    }
 }
