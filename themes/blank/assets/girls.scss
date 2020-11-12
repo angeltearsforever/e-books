@@ -55,11 +55,15 @@ $girlsBgColor: #a2faf1;
     .front-cover {
         background-position: center;
         background-image: url('/../images/girls-just-want-to-have-fun/frontcover.jpg');
+        background-size: contain;
+        background-color: black;
     }
 
     .back-cover {
         background-position: center;
         background-image: url('/../images/girls-just-want-to-have-fun/backcover.jpg');
+        background-size: contain;
+        background-color: black;
     }
 
     .dedication {
