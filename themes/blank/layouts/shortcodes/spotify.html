@@ -1,0 +1,8 @@
+<div class="spotify-wrapper">
+    <iframe src="https://open.spotify.com/embed/playlist/{{ if (.Get "playlist")}}{{.Get "playlist"}}{{end}}?autoplay=1"
+    	width="300"
+    	height="80"
+    	frameborder="0"
+    	allowtransparency="true"
+    	allow="autoplay; encrypted-media"></iframe>
+</div>
