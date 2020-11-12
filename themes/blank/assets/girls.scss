@@ -53,6 +53,12 @@ $girlsBgColor: #a2faf1;
             .text-left p {
                 font-size: 6px;
             }
+
+            .text-left ul {
+                @media screen and (max-width: $tablet) {
+                margin: .5em;
+                }
+            }
         }
     }
 
@@ -60,14 +66,14 @@ $girlsBgColor: #a2faf1;
         background-position: center;
         background-image: url('/../images/girls-just-want-to-have-fun/frontcover.jpg');
         background-size: contain;
-        background-color: black;
+        background-color: #111;
     }
 
     .back-cover {
         background-position: center;
         background-image: url('/../images/girls-just-want-to-have-fun/backcover.jpg');
         background-size: contain;
-        background-color: black;
+        background-color: #111;
     }
 
     .dedication {
