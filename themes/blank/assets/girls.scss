@@ -13,6 +13,7 @@ $girlsBgColor: #a2faf1;
         }
 
         ul {
+            padding-inline-start: initial;
             li {
                 list-style-type: none;
                 font-size: 11px;
@@ -24,6 +25,7 @@ $girlsBgColor: #a2faf1;
         @media screen and (max-width: $tablet) {
             ul {
                 line-height: 0.5em;
+
 
                 li {
                     font-size: 4px;
