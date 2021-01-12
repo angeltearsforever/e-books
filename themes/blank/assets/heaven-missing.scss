@@ -1,0 +1,86 @@
+.heaven-missing {
+	.button {
+        background-color: white;
+    }
+    .qzine-page {
+        background-color: white;
+
+        p.movies-header {
+            text-align: center;
+        }
+
+        ul {
+            padding-inline-start: initial;
+            li {
+                list-style-type: none;
+                font-size: 11px;
+                margin: 0;
+                color: black;
+            }
+        }
+
+        @media screen and (max-width: $tablet) {
+            ul {
+                line-height: .5em;
+
+
+                li {
+                    font-size: 7px;
+                }
+            }
+
+            .dedication-text p {
+                font-size: 9px;
+            }
+
+            .dedication-text br {
+                /* Nice to find a better way to collapse. */
+                display: none;
+            }
+
+            .images-container {
+                text-align: center;
+
+                img {
+                    width: 50px;
+                    display: inline-block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            .text-left p {
+                font-size: 10px;
+            }
+
+            .text-left ul {
+                @media screen and (max-width: $tablet) {
+                margin: .5em;
+                }
+            }
+        }
+    }
+
+    .front-cover {
+        background-position: center;
+        background-image: url('/../images/heaven-missing/heavenmissingcover.jpg');
+        background-size: contain;
+        background-color: black;
+    }
+
+    .back-cover {
+        background-position: center;
+        background-image: url('/../images/heaven-missing/heavenmissingbackcover.jpg');
+        background-size: contain;
+        background-color: #111;
+    }
+
+    .dedication {
+        img {
+            width: 200px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 1em;
+        }
+    }
+}
