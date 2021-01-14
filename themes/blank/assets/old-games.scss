@@ -3,6 +3,10 @@
     color: #72ac87;
   }
 
+  .button {
+    background-color: white;
+  }
+
   .qzine-page {
     background-color: #9edbaf;
   }
@@ -16,4 +20,24 @@
     background-image: url('/../images/old-games/back-cover.jpg');
     background-position: center;
   }
+
+  @media screen and (max-width: $tablet) {
+    .text-left br {
+      content: "";
+      margin: 2em;
+      display: block;
+      font-size: 15%;
+    }
+
+    .b p, .o p {
+      line-height: 1.1em;
+    }
+
+    .n p, .t p {
+      font-size: 6px;
+      line-height: 1.1em;
+    }
+
+  }
+
 }
