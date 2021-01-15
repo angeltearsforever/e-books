@@ -21,10 +21,10 @@
     background-position: center;
   }
 
-  @media screen and (max-width: $tablet) {
-    .text-left br, .dedication-text br {
+  @media screen and (max-width: $desktop) {
+    .text-left br {
       content: "";
-      margin: 2em;
+      margin: 1em;
       display: block;
       font-size: 15%;
     }
@@ -33,23 +33,21 @@
       font-size: 6px;
     }
 
-    .o p {
-      line-height: 1.2em;
+    .b p {
+      font-size: 5px; 
     }
 
-    .n2 p {
-      line-height: .9em;
+    .p16 p {
+      font-size: 5px;
     }
 
-    .n1 p, .n3 p, .b p {
-      line-height: 1.1em;
+    .n1 p, .n2 p, .n3 p {
+      font-size: 5px;
     }
 
     .t p {
-      line-height: 1em;
-      font-size: 6.5px;
+      font-size: 5px; 
     }
 
   }
-
 }
