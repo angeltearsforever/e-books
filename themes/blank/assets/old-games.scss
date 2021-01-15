@@ -24,25 +24,30 @@
   @media screen and (max-width: $tablet) {
     .text-left br, .dedication-text br {
       content: "";
-      margin: 1em;
+      margin: 2em;
       display: block;
       font-size: 15%;
     }
 
-    .b p, .o p {
+    .dedication-text p{
+      font-size: 6px;
+    }
+
+    .o p {
       line-height: 1.2em;
     }
 
-    .n1 p {
-      line-height: 1.3em;
+    .n2 p {
+      line-height: .9em;
     }
 
-    .n3 p {
-      line-height: 1.2em;
-    }
-
-    .n2 p, .t p {
+    .n1 p, .n3 p, .b p {
       line-height: 1.1em;
+    }
+
+    .t p {
+      line-height: 1em;
+      font-size: 6.5px;
     }
 
   }
