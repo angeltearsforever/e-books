@@ -5,6 +5,11 @@
 
   .qzine-page {
     background-color: #fc2466;
+    
+    .images-with-text img {
+      margin-top: 1em;
+      object-fit: contain;
+    }
   }
   
   .front-cover {
