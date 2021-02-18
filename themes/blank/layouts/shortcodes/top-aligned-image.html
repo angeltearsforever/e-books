@@ -1,4 +1,4 @@
-<div class="qzine-page">
+<div class="qzine-page {{ if .Get "class" }}{{ .Get "class" }}{{ end }}">
     <div class="images-with-text">
         <picture>
             {{ if .Get "mobileImg"}}

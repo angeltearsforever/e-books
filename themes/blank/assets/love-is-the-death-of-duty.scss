@@ -5,6 +5,38 @@
 
   .qzine-page {
     background-color: #fc2466;
+
+    a {
+      color: white;
+    }
+
+    &.red {
+      background-color: #fc2466;
+      p {
+        color: white;
+      }
+    }
+
+    &.white {
+      background-color: white;
+      p {
+        color: black;
+      }
+    }
+
+    &.pink {
+      background-color: #e45db9;
+      p {
+        color: black;
+      }
+    }
+
+    &.purple {
+      background-color: #c9a1e8;
+      p {
+        color: black;
+      }
+    }
     
     .images-with-text img {
       margin-top: 1em;
