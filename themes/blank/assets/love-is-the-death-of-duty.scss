@@ -7,7 +7,7 @@
     background-color: #fc2466;
 
     a {
-      color: white;
+      color: black;
     }
 
     &.red {
@@ -41,6 +41,12 @@
     .images-with-text img {
       margin-top: 1em;
       object-fit: contain;
+    }
+
+    @media screen and (max-width: $tablet) {
+      #wilson {
+        width: 100px;
+      }
     }
   }
   
