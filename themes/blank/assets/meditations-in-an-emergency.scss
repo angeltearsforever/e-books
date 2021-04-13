@@ -1,0 +1,23 @@
+.meditations-in-an-emergency {
+  .button {
+    background-color: white;
+  }
+
+  .qzine-page {
+    background-color: #fc3b84;
+
+    a {
+      color: black;
+    }
+  }
+  
+  .front-cover {
+    background-image: url('/../images/meditations-in-an-emergency/frontcover.png');
+    background-position: cover;
+  }
+  
+  .back-cover {
+    background-image: url('/../images/meditations-in-an-emergency/backcover.jpg');
+    background-position: center;
+  }
+}
