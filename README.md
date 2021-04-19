@@ -19,8 +19,10 @@ $ brew install hugo
 After cloning this repository, to preview the zines, run:
 
 ```
-$ hugo server
+$ hugo server -D
 ```
+
+Note that `-D` indicates that drafts should be shown. Ensure you set `draft: false` in the zine metadata before publishing.
 
 Next, open a browser at [localhost:1313](http://localhost:1313/).
 
