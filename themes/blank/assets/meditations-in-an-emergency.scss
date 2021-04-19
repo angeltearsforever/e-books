@@ -3,6 +3,12 @@
     background-color: white;
   }
 
+  br.spacer {
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+
   .qzine-page {
     background-color: #fc3b84;
 
@@ -17,17 +23,19 @@
                 margin: .5em;
                 color: black;
                 text-align: left;
-                line-height:.7em,
+                line-height:.8em,
             }
         }
 
         @media screen and (max-width: $tablet) {
+
             ul {
                 line-height: 0.5em;
 
 
                 li {
                     font-size: 4px;
+                    line-height:.7em,
                 }
             }
 
@@ -42,9 +50,12 @@
 
             .images-container {
                 text-align: center;
+                margin-top: 20px;
+                margin-bottom: 15px;
+
 
                 img {
-                    width: 50px;
+                    width: 100px;
                     display: inline-block;
                     margin-left: auto;
                     margin-right: auto;
@@ -57,7 +68,7 @@
 
             .text-left ul {
                 @media screen and (max-width: $tablet) {
-                margin: .2em;
+                margin: .1em;
                 }
             }
         }
