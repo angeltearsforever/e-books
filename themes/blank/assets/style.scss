@@ -315,9 +315,11 @@ img {
     width: 100%;
   }
 }
-.full-page-image-nofit {
+.full-page-image-top-contained {
+	background-color: black;
 	img {
-		object-fit: auto;
+		object-fit: inherit;
+		width: 80%;
 	}
 }
 .full-page-image-right {
