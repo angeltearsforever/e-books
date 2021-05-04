@@ -1,0 +1,19 @@
+.starring {
+  .button {
+    background-color: white;
+  }
+	
+	.qzine-page {
+	}
+	
+  .front-cover {
+    background-image: url('/../images/starring/frontcover.png');
+    background-position: cover;
+    width: 100%;
+  }
+  
+  .back-cover {
+    background-image: url('/../images/starring/backcover.jpg');
+    background-position: left;
+  }
+}
