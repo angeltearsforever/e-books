@@ -9,8 +9,24 @@
     }
   }
 
+        @media screen and (max-width: $tablet) {
+
+          .horse {
+            width: 50%;
+          }
+        }
+
+
   .qzine-page {
     background-color: #fc3b84;
+		
+		&.dedication-text p {
+			font-size: 9px;
+		}
+		
+		&.dedication-text ul li {
+			font-size: 9px;
+		}
 
     a {
       color: black;
@@ -38,6 +54,14 @@
                     line-height:.7em,
                 }
             }
+						
+						&.dedication-text p {
+							font-size: 4px;
+						}
+		
+						&.dedication-text ul li {
+							font-size: 4px;
+						}
 
             .dedication-text p {
                 font-size: 4px;

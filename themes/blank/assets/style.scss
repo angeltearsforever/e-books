@@ -315,6 +315,11 @@ img {
     width: 100%;
   }
 }
+.full-page-image-nofit {
+	img {
+		object-fit: auto;
+	}
+}
 .full-page-image-right {
   height: 100%;
   img {
