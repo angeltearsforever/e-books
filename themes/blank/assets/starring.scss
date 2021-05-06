@@ -4,16 +4,17 @@
   }
 	
 	.qzine-page {
+		background-color: #e1c7f8;
 	}
 	
   .front-cover {
-    background-image: url('/../images/starring/frontcover.png');
-    background-position: cover;
+    background-image: url('/../images/starring/frontcover.jpg');
+    background-position: center;
     width: 100%;
   }
   
   .back-cover {
-    background-image: url('/../images/starring/backcover.jpg');
-    background-position: left;
+    background-image: url('/../images/starring/backcover.png');
+    background-position: center;
   }
 }
