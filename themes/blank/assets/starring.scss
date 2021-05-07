@@ -5,16 +5,37 @@
 	
 	.qzine-page {
 		background-color: #e1c7f8;
+
+    &.purple {
+      background-color: #e1c7f8;
+      p {
+        color: black;
+      }
+    }
+
+    &.green {
+      background-color: #7cea76;
+      p {
+        color: black;
+      }
+    }
+
+    &.orange {
+      background-color: #f8e1c7;
+      p {
+        color: black;
+      }
+    }
 	}
 	
   .front-cover {
-    background-image: url('/../images/starring/frontcover.jpg');
+    background-image: url('/../images/starring/frontcover-resized.jpg');
     background-position: center;
     width: 100%;
   }
   
   .back-cover {
-    background-image: url('/../images/starring/backcover.png');
+    background-image: url('/../images/starring/backcover-resized.png');
     background-position: center;
   }
 }
