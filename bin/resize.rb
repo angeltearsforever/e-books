@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 # Resizes all images to 50% in a directory (DESTRUCTIVE!)
+# 
+# $ ./bin/resize.rb themes/blank/static/images/<zine>
 
 dir = ARGV[0]
 
