@@ -26,6 +26,18 @@
         color: black;
       }
     }
+
+    ul {
+        padding-inline-start: initial;
+          li {
+              list-style-type: none;
+              font-size: 11px;
+              margin: .5em;
+              color: black;
+              text-align: left;
+              line-height:.8em,
+          }
+        }
 	}
 	
   .front-cover {
