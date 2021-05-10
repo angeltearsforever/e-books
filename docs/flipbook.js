@@ -74,6 +74,16 @@ window.addEventListener('DOMContentLoaded', function() {
                     document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.opacity = 0;
                     document.querySelector('.it-aint-no-big-thing .spotify-wrapper').style.zIndex = -1;
                 }
+            } else if (document.querySelector('.starring') != null) {
+                // Hack: This zine shows the playlists on page 4 instead. Instead of letting the normal logic
+                // run, we override the per-zine logic here. Would be best to make this more scalable...
+                if (page == '4') {
+                    document.querySelector('.starring .spotify-wrapper').style.opacity = 1;
+                    document.querySelector('.starring .spotify-wrapper').style.zIndex = 3;
+                } else {
+                    document.querySelector('.starring .spotify-wrapper').style.opacity = 0;
+                    document.querySelector('.starring .spotify-wrapper').style.zIndex = -1;
+                }
             } else {
                 if (page == '2' || page == '3') {
                     document.querySelector('.spotify-wrapper').style.opacity = 1;
