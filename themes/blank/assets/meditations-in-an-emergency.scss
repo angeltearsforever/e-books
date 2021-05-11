@@ -8,6 +8,15 @@
       display: none;
     }
   }
+  .poem {
+    @media screen and (max-width: $tablet) {
+      line-height: 8px;
+
+      br.spacer {
+        display: block;
+      }
+    }
+  }
 
         @media screen and (max-width: $tablet) {
 
@@ -21,11 +30,11 @@
     background-color: #fc3b84;
 		
 		&.dedication-text p {
-			font-size: 9px;
+			font-size: 8px;
 		}
 		
 		&.dedication-text ul li {
-			font-size: 9px;
+			font-size: 8px;
 		}
 		
 		&.black { background-color: black; }
