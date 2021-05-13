@@ -106,4 +106,20 @@
     background-image: url('/../images/starring/backcover-resized.png');
     background-position: center;
   }
+
+  .images-container {
+    text-align: center;
+    margin-top: 40px;
+
+    img {
+      width: 90%;
+    }
+
+    @media screen and (max-width: $tablet) {
+
+          .wholeimage {
+            width: 50%;
+          }
+        }
+  }
 }
