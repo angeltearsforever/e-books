@@ -45,6 +45,14 @@
 
         @media screen and (max-width: $tablet) {
 
+          .movie-text p {
+            margin-bottom: 8px;
+          }
+
+          .movie-text br {
+            display: none;
+          }
+
             ul {
                 line-height: 0.5em;
 
