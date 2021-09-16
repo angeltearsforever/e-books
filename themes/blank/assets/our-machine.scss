@@ -1,0 +1,32 @@
+.our-machine {
+  .button {
+    background-color: white;
+  }
+	
+	.qzine-page {
+		background-color: #161616;
+
+    p {
+      color: #fbf1e4;
+
+      a {
+        color: #fbf1e4;
+      }
+
+      @media screen and (min-width: $tablet) {
+        font-size: 5px;
+      }
+    }
+  }
+
+  .front-cover {
+    background-image: url('/../images/our-machine/frontcover.jpg');
+    background-position: center;
+    width: 100%;
+  }
+  
+  .back-cover {
+    background-image: url('/../images/our-machine/backcover.jpg');
+    background-position: center;
+  }
+}
