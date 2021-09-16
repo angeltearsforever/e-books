@@ -8,12 +8,13 @@
 
     p {
       color: #fbf1e4;
+      font-size: 11px;
 
       a {
         color: #fbf1e4;
       }
 
-      @media screen and (min-width: $tablet) {
+      @media screen and (max-width: $tablet) {
         font-size: 5px;
       }
     }
