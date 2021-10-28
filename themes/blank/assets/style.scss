@@ -316,10 +316,11 @@ img {
   }
 }
 .full-page-image-top-contained {
-	background-color: black;
+	background-color: transparent;
 	img {
-		object-fit: inherit;
-		width: 80%;
+		object-fit: cover;
+    object-position: center;
+		width: 100%;
 	}
 }
 .full-page-image-right {
